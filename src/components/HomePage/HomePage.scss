@@ -60,8 +60,9 @@
 
 @media (max-width: 600px) {
   .home-page {
+    padding: 50px;
     h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
     }
     h2,
     .quote {
@@ -73,6 +74,12 @@
 @media (max-width: 415px) {
   .home-page {
     padding: 50px;
+    h1 {
+      font-size: 2.5rem;
+    }
+    .home-content {
+      padding: 110px 0;
+    }
   }
 }
 

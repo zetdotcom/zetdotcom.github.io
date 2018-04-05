@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
-@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:  400, 700');
 
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Nanum Gothic Coding', monospace;
   box-sizing: border-box;
 }
 
-html {
-  font-family: 'Lato', sans-serif;
+html,
+h1,
+h2 {
+  font-family: 'Nanum Gothic Coding', monospace;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }

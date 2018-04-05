@@ -5,6 +5,7 @@ import Section from '../components/Section/Section';
 import Projects from '../components/Projects/Projects';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
+import Links from '../components/Links/Links';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
@@ -13,9 +14,9 @@ import icon_project from '../Icons/icon_projects.svg';
 import icon_skills from '../Icons/icon_skills.svg';
 import icon_education from '../Icons/icon_education.svg';
 import icon_contact from '../Icons/icon_contact.svg';
+import resume from '../data/MZ_CV.pdf';
 
-import IoHappyOutline from 'react-icons/lib/io/happy-outline';
-import IoIosBriefcaseOutline from 'react-icons/lib/io/ios-briefcase-outline';
+import TiClipboard from 'react-icons/lib/ti/clipboard';
 
 import {
   cyan500,
@@ -75,6 +76,12 @@ const IndexPage = () => (
                 </p>
               </div>
             </div>
+            <a href={resume} target="blank">
+              {' '}
+              <div>
+                <TiClipboard className="link-icon" /> Resume
+              </div>
+            </a>
           </div>
         </div>
       </Section>
@@ -102,6 +109,7 @@ const IndexPage = () => (
       <Section title="Contact" icon={icon_contact} red={true}>
         <div>
           <Contact />
+          <Links />
         </div>
       </Section>
     </div>

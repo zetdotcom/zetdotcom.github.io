@@ -6,6 +6,17 @@ section {
     display: flex;
     // flex-direction: row;
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .link-icon {
+    font-size: 50px;
+    transition: transform 0.15s;
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
 }
 
 .red {
