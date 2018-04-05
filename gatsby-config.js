@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Michal Zadarnowski portfolio',
   },
   plugins: ['gatsby-plugin-react-helmet'],
   plugins: [`gatsby-plugin-sass`],
-}
+};

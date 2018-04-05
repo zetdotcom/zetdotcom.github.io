@@ -17,9 +17,6 @@ import icon_contact from '../Icons/icon_contact.svg';
 import IoHappyOutline from 'react-icons/lib/io/happy-outline';
 import IoIosBriefcaseOutline from 'react-icons/lib/io/ios-briefcase-outline';
 
-import '../styles/variables.scss';
-import './index.scss';
-
 import {
   cyan500,
   pink50,
