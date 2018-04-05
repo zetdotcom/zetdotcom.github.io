@@ -1,0 +1,33 @@
+.floats {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  color: rgba(227, 144, 144, 0.139);
+  // color: blue;
+  div {
+    // top: 20px;
+    animation: translateX infinite;
+    position: absolute;
+    // animation-timing-function: ease-in-out;
+    // transition: `1s`,
+    font-size: 2em;
+    text-transform: uppercase;
+    // font-weight: bold;
+  }
+}
+
+@keyframes translateX {
+  from {
+    top: -20px;
+  }
+  to {
+    top: 110%;
+  }
+}

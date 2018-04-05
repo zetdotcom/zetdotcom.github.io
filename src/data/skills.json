@@ -1,0 +1,54 @@
+[
+	{
+		"name": "HTML5",
+		"icon": "images/html51.png"
+	},
+	{
+		"name": "CSS3",
+		"icon": "images/css3.png"
+	},
+	{
+		"name": "JavaScript",
+		"icon": "images/js.png"
+	},
+	{
+		"name": "Sass",
+		"icon": "images/sass.png"
+	},
+	{
+		"name": "React",
+		"icon": "images/react.png"
+	},
+	{
+		"name": "Bootstrap",
+		"icon": "images/bootstrap.png"
+	},
+	{
+		"name": "Responsive Web Design",
+		"icon": "images/rwd.png"
+	},
+	{
+		"name": "jQuery",
+		"icon": "images/jq.png"
+	},
+	{
+		"name": "ES6",
+		"icon": "images/es6.png"
+	},
+	{
+		"name": "AJAX/JSON",
+		"icon": "images/json.png"
+	},
+	{
+		"name": "Gatsby",
+		"icon": "images/gatsby.png"
+	},
+	{
+		"name": "GIT",
+		"icon": "images/git.png"
+	},
+	{
+		"name": "NPM",
+		"icon": "images/npm.png"
+	}
+]

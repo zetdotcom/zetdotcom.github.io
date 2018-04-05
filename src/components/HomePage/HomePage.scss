@@ -1,0 +1,67 @@
+@import '../../styles/variables';
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.home-page {
+  position: relative;
+  background: linear-gradient(to top, $red, $red2);
+  color: $white;
+  padding: 40px 100px;
+  height: 700px;
+  .home-content {
+    padding: 175px 0;
+    z-index: 2;
+  }
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    span {
+      // text-transform: lowercase
+      font-size: 0.7em;
+    }
+  }
+  .quote {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.3;
+    padding: 25px 0;
+    span {
+      font-size: 0.8em;
+      font-style: italic;
+    }
+  }
+  // .quote {
+  //   // font-style: italic;
+  //   font-size: 1.3rem;
+  //   font-weight: 400;
+  //   margin-top: 20px;
+  // }
+}
+
+@media (max-width: 600px) {
+  .home-page {
+    h1 {
+      font-size: 3rem;
+    }
+    h2,
+    .quote {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (max-width: 415px) {
+  .home-page {
+    padding: 50px;
+  }
+}

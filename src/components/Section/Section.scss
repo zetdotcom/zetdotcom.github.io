@@ -1,0 +1,88 @@
+@import '../../styles/variables';
+
+section {
+  padding: 100px;
+  .container {
+    display: flex;
+    // flex-direction: row;
+  }
+}
+
+.red {
+  background: linear-gradient(to top, $red, $red2);
+  color: $white;
+}
+.white {
+  background: $white;
+  color: $red2;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+// h2:after {
+//   border: 2px solid $red;
+// }
+// h2:after {
+//   content: ' ';
+//   display: block;
+//   width: 60px;
+//   margin: 10px 0;
+// }
+
+.title {
+  // background: blue;
+
+  flex: 2;
+}
+
+.content {
+  // background: red;
+  flex: 5;
+  line-height: 30px;
+  letter-spacing: 1px;
+  // font-size: 18px;
+}
+
+.icon {
+  // font-size: 3rem;
+  width: 60px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1190px) {
+  section {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  section {
+    .container {
+      flex-direction: column;
+    }
+  }
+  .title {
+    display: flex;
+    align-items: center;
+  }
+  .icon {
+    order: 1;
+    margin-right: 20px;
+  }
+  h2 {
+    order: 2;
+  }
+}
+
+@media (max-width: 415px) {
+  section {
+    padding: 15px;
+  }
+}
