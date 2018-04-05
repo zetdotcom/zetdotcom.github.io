@@ -5,10 +5,20 @@
 }
 .home-page {
   position: relative;
-  background: linear-gradient(to top, $red, $red2);
+  background: linear-gradient(to top, transparent, $red2 40%);
   color: $white;
   padding: 40px 100px;
   height: 700px;
+  .color {
+    position: absolute;
+    // height: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: bgColor 7s infinite;
+    z-index: -1;
+  }
   .home-content {
     padding: 175px 0;
     z-index: 2;
@@ -63,5 +73,27 @@
 @media (max-width: 415px) {
   .home-page {
     padding: 50px;
+  }
+}
+
+@keyframes bgColor {
+  0% {
+    background: #bf360c;
+  }
+  20% {
+    background: #ff5722;
+  }
+  40% {
+    background: #ff8a65;
+  }
+
+  60% {
+    background: #ffab91;
+  }
+  80% {
+    background: #ff5722;
+  }
+  100% {
+    background: #bf360c;
   }
 }

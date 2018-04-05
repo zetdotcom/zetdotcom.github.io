@@ -6,6 +6,7 @@ import './HomePage.scss';
 
 const HomePage = () => (
   <div className="home-page">
+    <div className="color" />
     <div className="container">
       <h2>Michal Zadarnowski | zetdotcom. </h2>
       <div className="home-content">

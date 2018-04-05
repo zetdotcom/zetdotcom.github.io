@@ -54,7 +54,16 @@ const Contact = props => (
 
         <input type="hidden" name="_next" value="//zetdotcom.github.io" />
 
-        <textarea name="message" placeholder="Your message" />
+        <TextField
+          name="message"
+          fullWidth={true}
+          type="text"
+          floatingLabelText="Your Message"
+          floatingLabelStyle={styles.floatingLabelStyle}
+          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+          multiLine={true}
+          rows={10}
+        />
         <button type="submit">Send</button>
       </form>
     </div>

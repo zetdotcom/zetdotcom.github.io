@@ -15,6 +15,9 @@ section {
 .white {
   background: $white;
   color: $red2;
+  p {
+    color: $fontDark;
+  }
 }
 
 h2 {
