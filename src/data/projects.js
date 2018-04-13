@@ -3,6 +3,8 @@ import map from '../images/map.jpg';
 import realestate from '../images/realestate.jpg';
 import restaurant from '../images/restaurant.jpg';
 import mywebsite from '../images/mywebsite.jpg';
+import smg from '../images/smg.jpg';
+import matt from '../images/matt.jpg';
 
 const prosto = [
   {
@@ -54,6 +56,31 @@ const prosto = [
     skills: ['React', 'Responsive', 'HTML5', 'CSS3', 'Gatsby', 'Sass'],
     desc: 'My personal website',
     img: mywebsite,
+  },
+  {
+    title: 'Matt Wielunski',
+    link: 'https://nostalgic-shaw-c8e312.netlify.com/',
+    git: 'https://github.com/zetdotcom/matt-wordpress',
+    skills: [
+      'React',
+      'Responsive',
+      'HTML5',
+      'CSS3',
+      'Gatsby',
+      'Sass',
+      'WP REST API',
+      'WordPress',
+    ],
+    desc: 'Matt Wielunski Personal Trainer business website',
+    img: matt,
+  },
+  {
+    title: 'SMG Learning',
+    link: 'https://zetdotcom.github.io/smg-learning',
+    git: 'https://github.com/zetdotcom/smg-learning',
+    skills: ['React', 'Responsive', 'HTML5', 'CSS3', 'Gatsby', 'Sass'],
+    desc: 'SMG Learning homepage prototype webiste',
+    img: smg,
   },
 ];
 export default prosto;
