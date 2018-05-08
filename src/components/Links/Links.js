@@ -9,7 +9,7 @@ import TiMail from 'react-icons/lib/ti/mail';
 import './Links.scss';
 
 const Links = () => (
-  <div className="links">
+  <div className="contact--links">
     <div className="row row1">
       <div>
         <a href="mailto:michal.zadarnowski@gmail.com">
