@@ -8,7 +8,14 @@ const HomePage = () => (
   <div className="home-page">
     <div className="color" />
     <div className="container">
-      <h2>Michal Zadarnowski | zetdotcom. </h2>
+      <header>
+        <h2>Michal Zadarnowski | zetdotcom. </h2>
+        <h2>
+          <a href="http://zetlearning-co-uk.stackstaging.com/" target="blank">
+            BLOG
+          </a>{' '}
+        </h2>
+      </header>
       <div className="home-content">
         <h1>Front-End Developer</h1>
 
