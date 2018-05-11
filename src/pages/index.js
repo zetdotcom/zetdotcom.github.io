@@ -90,6 +90,7 @@ const IndexPage = () => (
           <Projects />
         </div>
       </Section>
+
       <Section title="Skillset" icon={icon_skills}>
         <div>
           <Skills />
@@ -117,3 +118,5 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
+
+//<div class="canva-embed" data-height-ratio="1.2941" data-design-id="DAC2nJ2c2IY" style="padding:129.41% 5px 5px 5px;background:rgba(0,0,0,0.03);border-radius:8px;"></div><script async src="https://sdk.canva.com/v1/embed.js"></script><a href="https://www.canva.com/design/DAC2nJ2c2IY/view?utm_content=DAC2nJ2c2IY&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">Professional Software Engineer Resume</a> by <a href="https://www.canva.com/michal.zadarnowski?utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank">Michal Zadarnowski</a>
