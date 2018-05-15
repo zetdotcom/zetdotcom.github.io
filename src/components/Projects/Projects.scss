@@ -55,13 +55,10 @@
       &:hover {
         background: $red;
         & + .link-desc {
-          // color: red;
           font-size: 16px;
         }
       }
       &-desc {
-        // font-size: 12px;
-        // float: left;
         color: $white;
         text-shadow: 2px 2px 2px black;
         top: 15px;
@@ -78,14 +75,11 @@
     font-weight: 600;
     letter-spacing: 2px;
     padding: 5px 10px;
-    // text-align: center;
   }
 
   .projectSkills {
     display: flex;
     flex-flow: row wrap;
-    // justify-content: center;
-
     div {
       margin: 2px 5px 0 0;
       border: 1px solid $pink;

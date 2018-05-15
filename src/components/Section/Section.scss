@@ -37,15 +37,6 @@ h2 {
   font-weight: 700;
   letter-spacing: 2px;
 }
-// h2:after {
-//   border: 2px solid $red;
-// }
-// h2:after {
-//   content: ' ';
-//   display: block;
-//   width: 60px;
-//   margin: 10px 0;
-// }
 
 .title {
   // background: blue;
@@ -54,15 +45,12 @@ h2 {
 }
 
 .content {
-  // background: red;
   flex: 5;
   line-height: 30px;
   letter-spacing: 1px;
-  // font-size: 18px;
 }
 
 .icon {
-  // font-size: 3rem;
   width: 60px;
   img {
     width: 100%;
