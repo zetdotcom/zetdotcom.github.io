@@ -54,6 +54,18 @@ const skile = [
     name: 'NPM',
     icon: require('../images/npm.png'),
   },
+  {
+    name: 'Redux',
+    icon: require('../images/redux.png'),
+  },
+  {
+    name: 'Redux Saga',
+    icon: require('../images/reduxSaga.png'),
+  },
+  {
+    name: 'Jest',
+    icon: require('../images/Jest.png'),
+  },
 ];
 
 export default skile;
