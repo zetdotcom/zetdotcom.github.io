@@ -15,7 +15,8 @@ const TemplateWrapper = ({ children }) => (
           content: 'Michal Zadarnowski front end developer portfolio website',
         },
         {
-          name: 'front end developer, web developer, michal zadarnowski',
+          name:
+            'front end developer, web developer, michal zadarnowski, react developer',
           content: 'front end developer portfolio',
         },
       ]}

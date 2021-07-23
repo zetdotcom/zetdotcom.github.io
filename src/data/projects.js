@@ -1,6 +1,6 @@
 import jezuszyje from '../images/jezuszyje.jpg';
 import map from '../images/map.jpg';
-import realestate from '../images/realestate.jpg';
+import msjglasgow from '../images/msjglasgow.png';
 import restaurant from '../images/restaurant.jpg';
 import mywebsite from '../images/mywebsite.jpg';
 import smg from '../images/smg.jpg';
@@ -33,13 +33,12 @@ const prosto = [
     img: map,
   },
   {
-    title: 'Real Estate',
-    link: 'https://zetdotcom.github.io/react-real-estate/',
-    git: 'https://github.com/zetdotcom/react-real-estate',
-    skills: ['React', 'Responsive', 'HTML5', 'CSS3', 'Sass', 'JSON'],
+    title: 'MSJ Glasgow',
+    link: 'https://msjglasgow.org',
+    skills: ['React', 'Responsive', 'HTML5', 'CSS3', 'Sass', 'JSON', 'Typescript'],
     desc:
-      'Real Estate sample website with filter section to allow you to search for the property you want. Planning to connect this app to Zoopla API',
-    img: realestate,
+      'Community website displaying posts and events data from Facebook Page - Facebook API integration',
+    img: msjglasgow,
   },
   {
     title: 'Restaurant',

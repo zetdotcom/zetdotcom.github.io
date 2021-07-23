@@ -63,8 +63,23 @@ const skile = [
     icon: require('../images/reduxSaga.png'),
   },
   {
+    name: 'Redux Thunk',
+  },
+  {
     name: 'Jest',
     icon: require('../images/Jest.png'),
+  },
+  {
+    name: 'Node.js',
+  },
+  {
+    name: 'Redux Toolkit',
+  },
+  {
+    name: 'React Testing Library',
+  },
+  {
+    name: 'Cypress',
   },
 ];
 
