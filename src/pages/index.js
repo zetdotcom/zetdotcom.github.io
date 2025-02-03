@@ -15,7 +15,7 @@ import icon_project from '../Icons/icon_projects.svg';
 import icon_skills from '../Icons/icon_skills.svg';
 import icon_education from '../Icons/icon_education.svg';
 import icon_contact from '../Icons/icon_contact.svg';
-import resume from '../data/MZ_CV.pdf';
+import resume from '../data/MZ_CV_senior.pdf';
 
 
 
