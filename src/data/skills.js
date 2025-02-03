@@ -3,6 +3,15 @@ import git from '../images/git.png';
 
 const skile = [
   {
+    name: 'Terraform',
+  },
+  {
+    name: 'AWS',
+  },
+  { name: 'Docker' },
+  { name: 'Typescript' },
+  { name: 'Node.js' },
+  {
     name: 'HTML5',
     icon: require('../images/html51.png'),
   },

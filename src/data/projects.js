@@ -4,16 +4,25 @@ import msjglasgow from '../images/msjglasgow.png';
 import restaurant from '../images/restaurant.jpg';
 import mywebsite from '../images/mywebsite.jpg';
 import smg from '../images/smg.jpg';
-import matt from '../images/matt.jpg';
+import amam from '../images/amam.png';
+import jatymy from '../images/jatymy.png';
 
 const prosto = [
   {
-    title: 'Community Website',
-    link: 'https://www.jezuszyje.co.uk',
+    title: 'AmAm App',
+    link: 'https://amam.app',
     git: '',
-    skills: ['React', 'Firebase', 'Responsive', 'HTML5', 'CSS3', 'Sass'],
-    desc: 'Church community website',
-    img: jezuszyje,
+    skills: ['Next.js', 'Tailwind', 'Serverless', 'AWS Amplify'],
+    desc: 'App for easy food ordering in small cityes',
+    img: amam,
+  },
+  {
+    title: 'JaTyMy',
+    link: 'https://app.miloscizycie.pl',
+    git: '',
+    skills: ['Next.js', 'MaterialUI', 'Netlify', 'Open AI'],
+    desc: 'App for married couples to help them thrive',
+    img: jatymy,
   },
   {
     title: 'Electric Map',
@@ -35,7 +44,15 @@ const prosto = [
   {
     title: 'MSJ Glasgow',
     link: 'https://msjglasgow.org',
-    skills: ['React', 'Responsive', 'HTML5', 'CSS3', 'Sass', 'JSON', 'Typescript'],
+    skills: [
+      'React',
+      'Responsive',
+      'HTML5',
+      'CSS3',
+      'Sass',
+      'JSON',
+      'Typescript',
+    ],
     desc:
       'Community website displaying posts and events data from Facebook Page - Facebook API integration',
     img: msjglasgow,
@@ -56,23 +73,7 @@ const prosto = [
     desc: 'My personal website',
     img: mywebsite,
   },
-  {
-    title: 'Matt Wielunski',
-    link: 'https://nostalgic-shaw-c8e312.netlify.com/',
-    git: 'https://github.com/zetdotcom/matt-wordpress',
-    skills: [
-      'React',
-      'Responsive',
-      'HTML5',
-      'CSS3',
-      'Gatsby',
-      'Sass',
-      'WP REST API',
-      'WordPress',
-    ],
-    desc: 'Matt Wielunski Personal Trainer business website',
-    img: matt,
-  },
+
   {
     title: 'SMG Learning',
     link: 'https://zetdotcom.github.io/smg-learning',

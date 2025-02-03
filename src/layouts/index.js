@@ -8,7 +8,7 @@ import './index.scss';
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Michal Z"
+      title="Michał Zadarnowski | Senior Software Engineer"
       meta={[
         {
           name: 'Personal website',
@@ -16,7 +16,7 @@ const TemplateWrapper = ({ children }) => (
         },
         {
           name:
-            'front end developer, web developer, michal zadarnowski, react developer',
+            'front end developer, web developer, michal zadarnowski, react developer, senior software engineer',
           content: 'front end developer portfolio',
         },
       ]}
