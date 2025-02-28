@@ -5,7 +5,7 @@
   "author": "Michal Zadarnowski <michal.zadarnowski@gmail.com>",
   "homepage": "https://zetdotcom.github.io/zetdotcom.github.io",
   "dependencies": {
-    "gatsby": "^1.9.279",
+    "gatsby": "^5.3.3",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gh-pages": "^1.2.0",
