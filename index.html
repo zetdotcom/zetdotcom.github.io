@@ -214,11 +214,14 @@
             .project-media {
                 width: 100%;
                 display: block;
+                height: clamp(12rem, 24vw, 18rem);
                 aspect-ratio: 16 / 10;
-                object-fit: cover;
+                object-fit: contain;
+                object-position: center;
                 border: 3px solid var(--line);
                 border-radius: 18px;
                 background: var(--surface-2);
+                padding: 0.35rem;
             }
 
             .project-body {
@@ -386,8 +389,8 @@
                         <div>
                             <img
                                 class="portrait"
-                                src="assets/profile-placeholder.svg"
-                                alt="Profile image placeholder"
+                                src="assets/profile-picture.png"
+                                alt="Michal Zadarnowski"
                             />
                         </div>
                     </div>
@@ -405,8 +408,8 @@
                             >
                                 <img
                                     class="project-media"
-                                    src="assets/project-placeholder.svg"
-                                    alt="Breathwork project placeholder image"
+                                    src="assets/breathwork.png"
+                                    alt="Breathwork project preview"
                                 />
                                 <div class="project-body">
                                     <div class="project-title">Breathwork</div>
@@ -425,14 +428,14 @@
                             >
                                 <img
                                     class="project-media"
-                                    src="assets/project-placeholder.svg"
-                                    alt="MindReel project placeholder image"
+                                    src="assets/mindreel.png"
+                                    alt="MindReel project preview"
                                 />
                                 <div class="project-body">
                                     <div class="project-title">MindReel</div>
                                     <p>
                                         Desktop app for easy tasks logging
-                                        during day.
+                                        during the day.
                                     </p>
                                 </div>
                             </a>
@@ -445,8 +448,8 @@
                             >
                                 <img
                                     class="project-media"
-                                    src="assets/project-placeholder.svg"
-                                    alt="Smart Apps research project placeholder image"
+                                    src="assets/smart-apps.png"
+                                    alt="Smart Apps research project preview"
                                 />
                                 <div class="project-body">
                                     <div class="project-title">
@@ -469,8 +472,8 @@
                             >
                                 <img
                                     class="project-media"
-                                    src="assets/project-placeholder.svg"
-                                    alt="Smart Apps slides project placeholder image"
+                                    src="assets/smart-apps-slides.png"
+                                    alt="Smart Apps slides project preview"
                                 />
                                 <div class="project-body">
                                     <div class="project-title">
