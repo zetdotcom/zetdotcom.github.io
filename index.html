@@ -64,6 +64,11 @@
                 outline: none;
             }
 
+            a:focus-visible {
+                outline: 3px solid var(--line);
+                outline-offset: 4px;
+            }
+
             .page {
                 width: min(100%, 78rem);
                 margin: 0 auto;
@@ -103,6 +108,10 @@
                 line-height: 0.92;
                 letter-spacing: -0.06em;
                 max-width: 10ch;
+            }
+
+            .surname {
+                letter-spacing: -0.04em;
             }
 
             .hero-grid {
@@ -267,6 +276,22 @@
                     grid-template-columns: 1fr;
                 }
             }
+
+            @media (prefers-reduced-motion: reduce) {
+                *,
+                *::before,
+                *::after {
+                    scroll-behavior: auto;
+                    transition: none;
+                }
+
+                .social-link:hover,
+                .social-link:focus-visible,
+                .project:hover,
+                .project:focus-visible {
+                    transform: none;
+                }
+            }
         </style>
     </head>
     <body>
@@ -275,7 +300,9 @@
                 <section class="hero panel" aria-labelledby="site-title">
                     <div class="hero-grid">
                         <div>
-                            <h1 id="site-title">Michał Zadarnowski</h1>
+                            <h1 id="site-title">
+                                Michał <span class="surname">Zadarnowski</span>
+                            </h1>
                             <p class="lede">
                                 Senior Software Engineer, Front-End, based in
                                 Poland.
@@ -286,7 +313,7 @@
                                     class="social-link"
                                     href="https://github.com/zetdotcom"
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                 >
                                     <svg
                                         viewBox="0 0 24 24"
@@ -308,7 +335,7 @@
                                     class="social-link"
                                     href="https://www.linkedin.com/in/michal-zadarnowski"
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                 >
                                     <svg
                                         viewBox="0 0 24 24"
@@ -344,7 +371,7 @@
                                     class="social-link"
                                     href="https://medium.com/@michal.zadarnowski"
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                 >
                                     <svg
                                         viewBox="0 0 24 24"
@@ -365,7 +392,7 @@
                                     class="social-link"
                                     href="https://x.com/zetdotcomdev"
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                 >
                                     <svg
                                         viewBox="0 0 24 24"
@@ -389,7 +416,7 @@
                         <div>
                             <img
                                 class="portrait"
-                                src="assets/profile-picture.png"
+                                src="assets/profile-picture.webp"
                                 alt="Michal Zadarnowski"
                             />
                         </div>
@@ -404,15 +431,19 @@
                                 class="project"
                                 href="https://breathwork.michalzet.deno.net/"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 <img
                                     class="project-media"
-                                    src="assets/breathwork.png"
+                                    src="assets/breathwork.webp"
                                     alt="Breathwork project preview"
+                                    width="16"
+                                    height="10"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <div class="project-body">
-                                    <div class="project-title">Breathwork</div>
+                                    <h3 class="project-title">Breathwork</h3>
                                     <p>
                                         A web application for breathing training
                                         inspired by Wim Hof method.
@@ -424,15 +455,19 @@
                                 class="project"
                                 href="https://zetdotcom.github.io/mindreel/"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 <img
                                     class="project-media"
-                                    src="assets/mindreel.png"
+                                    src="assets/mindreel.webp"
                                     alt="MindReel project preview"
+                                    width="16"
+                                    height="10"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <div class="project-body">
-                                    <div class="project-title">MindReel</div>
+                                    <h3 class="project-title">MindReel</h3>
                                     <p>
                                         Desktop app for easy tasks logging
                                         during the day.
@@ -444,17 +479,21 @@
                                 class="project"
                                 href="https://zetdotcom.github.io/smart-apps"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 <img
                                     class="project-media"
-                                    src="assets/smart-apps.png"
+                                    src="assets/smart-apps.webp"
                                     alt="Smart Apps research project preview"
+                                    width="16"
+                                    height="10"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <div class="project-body">
-                                    <div class="project-title">
+                                    <h3 class="project-title">
                                         Smart Apps research
-                                    </div>
+                                    </h3>
                                     <p>
                                         Research and concept of smart apps
                                         powered by small language models that
@@ -468,17 +507,21 @@
                                 class="project"
                                 href="https://zetdotcom.github.io/smart-apps/slides"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 <img
                                     class="project-media"
-                                    src="assets/smart-apps-slides.png"
+                                    src="assets/smart-apps-slides.webp"
                                     alt="Smart Apps slides project preview"
+                                    width="16"
+                                    height="10"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <div class="project-body">
-                                    <div class="project-title">
+                                    <h3 class="project-title">
                                         Smart Apps slides
-                                    </div>
+                                    </h3>
                                     <p>
                                         Easier to digest, slide-format
                                         presentation of Smart Apps research.
