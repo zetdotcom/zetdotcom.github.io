@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Articles, interactive guides, and notes by Michał Zadarnowski, grouped by topic."
+        />
+        <title>Knowledge base | Michał Zet</title>
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+    </head>
+    <body>
+        <main class="page knowledge-page">
+            <header class="section panel knowledge-header">
+                <nav aria-label="Site navigation">
+                    <a href="../">Home</a>
+                </nav>
+                <h1>Knowledge base</h1>
+                <p class="lede">
+                    Articles, interactive guides, and notes from what I’m
+                    learning and building.
+                </p>
+            </header>
+
+            <!-- Add one list item per topic and one format link per artefact. -->
+            <ul class="topics" aria-label="Topics" role="list">
+                <li>
+                    <article class="section panel" id="frontend-field-guide">
+                        <h2 class="topic-title">
+                            Choosing a frontend for coding agents
+                        </h2>
+                        <p class="topic-description">
+                            How to choose a frontend stack that gives coding agents
+                            a clear place to make changes and a reliable way to
+                            check their work.
+                        </p>
+                        <ul
+                            class="formats"
+                            aria-label="Available formats"
+                            role="list"
+                        >
+                            <li>
+                                <a
+                                    class="format-link format-link-primary"
+                                    href="frontend-field-guide.html"
+                                >
+                                    <span class="format-label">
+                                        Open interactive guide
+                                    </span>
+                                    <span class="format-description">
+                                        Try the stack picker and compare frameworks.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="format-link"
+                                    href="frontend-field-guide.md"
+                                    download
+                                >
+                                    <span class="format-label">
+                                        Download Markdown notes
+                                    </span>
+                                    <span class="format-description">
+                                        Keep a plain-text reference with a
+                                        framework comparison table.
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </article>
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>
