@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1A3324"><title>Frontend Field Guide · Choosing a stack for coding agents</title>
+<style>
+:root{color-scheme:light;--moss:#1a3324;--sage:#76a880;--copper:#9c5f32;--cream:#f2efe9;--ink:#203b2b;--line:#aebcad;--panel:linear-gradient(126deg,#1a3324,#2c5530);--serif:"Instrument Serif",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:linear-gradient(var(--cream),#e1eadf);font:16px/1.58 var(--sans)}main,header,footer{max-width:1220px;margin:auto;padding-inline:clamp(18px,5vw,72px)}header,footer,nav,.brand,.tag,.choice,.count{display:flex;align-items:center}header{justify-content:space-between;gap:20px;padding-block:20px;border-bottom:1px solid #bec7b9}.brand{gap:10px;font:600 17px var(--serif)}.mark{width:24px;height:25px;display:inline-block;background:linear-gradient(135deg,#c7d9b8,#76a880 35%,#284934 85%);border-radius:70% 12% 65% 12%;box-shadow:inset 1px 2px 3px #d0e1c4}.brand,a{color:inherit}nav{gap:22px;font-size:.86rem}nav a{text-decoration:none}nav a:hover,a:hover{text-decoration:underline;text-underline-offset:4px}.skip{position:absolute;left:8px;top:-80px;background:white;padding:10px;z-index:9}.skip:focus{top:8px}:focus-visible{outline:3px solid #b67b4c;outline-offset:4px}
+.hero{display:grid;grid-template-columns:1.55fr 1fr;align-items:center;position:relative;padding:clamp(32px,5vw,70px) 0;gap:12px}.kicker,.micro,legend,.rec-label{font:600 .7rem/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase}.kicker{color:#795033;margin:0 0 12px}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:400}h1{font-size:clamp(3.35rem,6.6vw,5.9rem);letter-spacing:-.065em;line-height:.96}h1 em{font-weight:400;color:#526e53}.lead{max-width:54ch;margin-top:20px;font-size:1.06rem;color:#405747}
+.art{height:236px;position:relative;isolation:isolate;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 65%,#c2cfa877,transparent 64%)}.sculpt{position:relative;width:220px;height:210px}.sculpt:after{content:"";position:absolute;bottom:7px;left:25px;width:180px;height:28px;border-radius:50%;background:#3b493d42;filter:blur(10px);z-index:-1}.stone{position:absolute;display:block;box-shadow:inset -5px -12px 19px #142d254d,inset 2px 3px 6px #fff6,3px 8px 12px #172f201f}.base{width:209px;height:68px;left:2px;bottom:20px;border-radius:55% 42% 46% 41%;transform:rotate(-5deg);background:radial-gradient(ellipse at 25% 15%,#759174,#3b5c41 53%,#253729)}.middle{width:158px;height:62px;left:32px;bottom:73px;border-radius:51% 48% 38% 44%;transform:rotate(9deg);background:radial-gradient(ellipse at 28% 15%,#d7b296,#a97550 55%,#805537)}.top{width:98px;height:88px;left:70px;bottom:124px;border-radius:64% 43% 56% 37%;transform:rotate(-11deg);background:radial-gradient(ellipse at 29% 19%,#dde7c9,#99b297 50%,#67826b)}
+section{scroll-margin:18px}.picker{border:1px solid #c1cbbb;border-radius:20px;overflow:hidden;background:#fafbf57d;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 12px 35px #2949300c}.controls,.rec,.lab{padding:clamp(22px,3.2vw,44px)}h2{font-size:clamp(2rem,3.3vw,3.2rem);letter-spacing:-.055em;line-height:1.07}.controls h2{margin-bottom:25px}fieldset{padding:0;border:0;margin:15px 0 0}legend{margin-bottom:8px;color:#4c6351}.options{display:flex;gap:6px;flex-wrap:wrap}.choice{position:relative;cursor:pointer}.choice input{position:absolute;opacity:0;width:1px;height:1px}.choice span{font-size:.86rem;padding:7px 13px;border:1px solid #aebcac;border-radius:99px;background:#fafbf6}.choice input:checked+span{background:var(--moss);color:white;border-color:var(--moss)}.choice input:focus-visible+span{outline:3px solid var(--copper);outline-offset:2px}.rec,.lab{background:var(--panel);color:#efefef}.rec{display:flex;flex-direction:column;justify-content:center}.tag{gap:9px;color:#c6dfc5}.dot{width:9px;height:9px;display:inline-block;background:var(--sage);border-radius:50%;box-shadow:0 0 8px #76a88099}.rec h3{font-size:clamp(2.05rem,3.5vw,3rem);letter-spacing:-.04em;line-height:1.08;margin:14px 0}.rec p{color:#e0eadd}.trade{border-top:1px solid #ffffff40;padding-top:14px;margin-top:18px;font-size:.92rem}.trade strong{color:#f3caa5}.section{margin:56px 0}.intro{max-width:73ch;color:#425947;margin:10px 0 23px}.cards{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:10px}details{border:1px solid #b8c6b6;border-radius:14px;background:#ffffff5e}summary{cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 20px;list-style:none}summary::-webkit-details-marker{display:none}summary:before{content:"";width:15px;height:15px;border-radius:58% 47% 50% 45%;background:radial-gradient(circle at 30% 20%,#d2e0c6,#8ba789 47%,#48644d);box-shadow:1px 2px 3px #263b2536}summary:after{content:"+";margin-left:auto}details[open] summary:after{content:"−"}summary b{font-weight:600}details p{padding:0 20px 18px;font-size:.94rem}details a,.notes a{font-size:.9rem}
+.lab{border-radius:20px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.lab p{color:#dce8d9;margin-top:12px}.demo{background:#ffffff0b;border:1px solid #ffffff45;border-radius:14px;padding:20px}.demo-head,.demo-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.demo-head{border-bottom:1px solid #ffffff50;padding-bottom:11px;margin-bottom:9px}.demo-row{padding:5px}.count{font-variant-numeric:tabular-nums;color:#deeddb}.demo label{cursor:pointer}.demo input{width:1.1rem;height:1.1rem;accent-color:#99c39e;vertical-align:middle}.lab small{display:block;margin-top:16px;color:#ccdfcd}.notes{display:grid;grid-template-columns:1fr 1fr;gap:28px}.notes article{border-top:1px solid #91a690;padding-top:16px}.notes h3{font-size:1.65rem;margin-bottom:8px}.notes p+p{margin-top:10px}footer{border-top:1px solid #b4c3b3;justify-content:space-between;padding-block:21px;font-size:.8rem}
+@media(max-width:720px){header{flex-wrap:wrap;gap:10px}nav{gap:14px}.hero{grid-template-columns:1fr auto}.art{width:96px;height:110px}.sculpt{transform:scale(.43);transform-origin:center;position:absolute}.picker,.lab,.notes,.cards{grid-template-columns:1fr}.section{margin:38px 0}.hero{align-items:start}.lead{font-size:.98rem}.lab{gap:20px}.controls h2{margin-bottom:16px}}
+@media(max-width:480px){.hero{display:block}.art{float:right;position:absolute;right:0;top:18px;width:60px;height:55px}.sculpt{transform:scale(.25)}.hero h1{max-width:10ch}.brand{font-size:16px}nav{font-size:.78rem}.notes{gap:20px}}
+</style></head>
+<body><a class="skip" href="#picker">Skip to stack picker</a>
+<header id="top"><span class="brand"><i class="mark" aria-hidden="true"></i>Frontend Field Guide</span><nav aria-label="Guide sections"><a href="#picker">Stack picker</a><a href="#library">Frameworks</a><a href="#rendering">Rendering</a></nav></header>
+<main>
+<div class="hero"><div><p class="kicker">Engineering field notes</p><h1>Choosing a frontend<br><em>for coding agents.</em></h1><p class="lead">Choose a stack by the changes your agent will make. A clear place to edit, a useful compiler error and a repeatable browser test all help the next change go well.</p></div><div class="art" aria-hidden="true"><div class="sculpt"><i class="stone base"></i><i class="stone middle"></i><i class="stone top"></i></div></div></div>
+<section id="picker" class="picker" aria-labelledby="pick-title"><div class="controls"><h2 id="pick-title">Find your starting point</h2>
+<fieldset><legend>What are you building?</legend><div class="options">
+<label class="choice"><input name="kind" type="radio" value="utility" checked><span>Small utility</span></label>
+<label class="choice"><input name="kind" type="radio" value="interactive"><span>Interactive app</span></label>
+<label class="choice"><input name="kind" type="radio" value="content"><span>Content site</span></label>
+<label class="choice"><input name="kind" type="radio" value="compute"><span>Compute-heavy tool</span></label></div></fieldset>
+<fieldset><legend>Where will people use it?</legend><div class="options"><label class="choice"><input name="target" type="radio" value="web" checked><span>Browser</span></label><label class="choice"><input name="target" type="radio" value="desktop"><span>Desktop app</span></label></div></fieldset></div>
+<div class="rec" aria-live="polite" aria-atomic="true"><div class="tag"><i class="dot"></i><span class="rec-label">Suggested starting point</span></div><h3 id="stack">Vanilla TypeScript</h3><p id="reason">For a calculator or a single form, a local value and a DOM event handler can own the whole interaction.</p><p class="trade"><strong>Tradeoff · </strong><span id="trade">When several views depend on the same change, you own the work of keeping them in sync.</span></p></div></section>
+<section class="section" id="library"><p class="kicker">Framework reference</p><h2>Where each one fits</h2><p class="intro">These are engineering judgments. Expand a framework to see which decisions it settles for an agent and which ones still need your attention.</p><div class="cards">
+<details><summary><b>React + TypeScript</b></summary><p>My default for a dashboard with connected views. Vite handles the build and React Router handles navigation. Give agents one example for forms, state ownership and loading data so every screen follows the same conventions. <a href="https://react.dev/learn/creating-a-react-app">React guide</a></p></details>
+<details><summary><b>Next.js</b></summary><p>Useful when a React application benefits from server rendering and integrated routing. Its dev server lets agents inspect errors, logs and routes. Changes still need clear decisions about caching and which code runs in the browser. <a href="https://nextjs.org/docs/app/guides/mcp">Next.js agent tools</a></p></details>
+<details><summary><b>SvelteKit</b></summary><p>Compact components suit a small team maintaining a full app. Give agents access to the Svelte team's current docs and static analysis so they can catch outdated generated patterns. <a href="https://svelte.dev/docs/ai/overview">Svelte agent tools</a></p></details>
+<details><summary><b>Vue / Nuxt</b></summary><p>Vue keeps the template and its behavior together in a single component file. Pick a consistent API style. Consider Nuxt when you also want app-level routing and rendering conventions. <a href="https://vuejs.org/guide/introduction.html">Vue guide</a></p></details>
+<details><summary><b>Angular</b></summary><p>Useful when many contributors or agents need the same conventions. Its CLI and official agent guidance narrow implementation choices, at the cost of more framework concepts to learn. <a href="https://angular.dev/ai/develop-with-ai">Angular guidance</a></p></details>
+<details><summary><b>Astro</b></summary><p>Use content pages with focused interactive islands for a publication or catalog. If several islands need to react to every edit, revisit which part of the UI should own that state. <a href="https://docs.astro.build/en/concepts/islands/">Astro islands</a></p></details>
+</div></section>
+<section class="lab" id="rendering"><div><p class="micro">Rendering lab</p><h2>One edit, two views</h2><p>Select a task. The row and the count both reflect the same selection. A vanilla render function updates existing elements, so the checkbox keeps keyboard focus.</p></div>
+<div class="demo"><div class="demo-head"><b>Review checklist</b><output class="count" id="count" aria-live="polite">0 of 3 ready</output></div><div id="tasks">
+<div class="demo-row"><label><input type="checkbox" value="types"> Check types</label></div>
+<div class="demo-row"><label><input type="checkbox" value="flow"> Run the user flow</label></div>
+<div class="demo-row"><label><input type="checkbox" value="layout"> Inspect the layout</label></div></div><small>Input event → selection → row and count</small></div></section>
+<section class="section notes" aria-label="Implementation notes">
+<article><h3>When to add a store</h3><p>Keep state local while one control owns it. For shared state, Zustand's vanilla store gives agents named actions and subscriptions. Render once at mount, subscribe, then unsubscribe when the view goes away. Derive counts from the items.</p><p>Nano Stores suits independent values. Signals Core tracks linked calculations. jQuery earns its place when an existing app or plugin needs it. <a href="https://zustand.docs.pmnd.rs/reference/apis/create-store">Zustand vanilla API</a></p></article>
+<article><h3>When to add a renderer</h3><p>For text or a button, update the existing node. If rows move or contain inputs, preserve their identity so selection and focus survive. Standalone lit-html can handle dynamic templates. When agents are inventing rules for mounting, routing and cleanup, consider a framework. <a href="https://lit.dev/docs/libraries/standalone-templates/">Lit templates</a></p></article>
+<article><h3>What Rust buys you</h3><p>Leptos gives you signals and keyed lists for targeted updates. Rust's compiler catches ownership and type errors. Compare cold startup and one real interaction on the same device. For heavy calculations, benchmark a Wasm module including data transfer. <a href="https://book.leptos.dev/">Leptos book</a></p></article>
+<article><h3>From browser to desktop</h3><p>Tauri can bundle a TS or Leptos frontend in a desktop window and run file or database operations in native Rust. Ship per target: Windows installer and WebView2, macOS app bundle, or Linux AppImage. Dioxus is another option for a desktop-first Rust UI. <a href="https://v2.tauri.app/distribute/">Tauri packaging</a> · <a href="https://github.com/DioxusLabs/dioxus">Dioxus</a></p></article>
+</section></main><footer><span>Frontend Field Guide</span><a href="#top">Back to top ↑</a></footer>
+<script>
+const paths = {
+  utility: {
+    web: ['Vanilla TypeScript','For a calculator or a single form, a local value and a DOM event handler can own the whole interaction.','When several views depend on the same change, you own the work of keeping them in sync.'],
+    desktop: ['Vanilla TS + Tauri','Package a small local utility in a desktop window. Keep controls in TypeScript and expose file operations from native Rust.','Build and test a package for each operating system you support.']
+  },
+  interactive: {
+    web: ['React + TypeScript','For filters, editable rows and a detail view, use components with shared state. Vite and React Router give agents a build and routing setup.','Choose one pattern for fetching and editing data. React leaves that decision to your team.'],
+    desktop: ['React + Tauri','Reuse a component-based interface in a desktop window. Put local storage or file operations behind a small native API.','Check focus, shortcuts and window behavior inside each target WebView.']
+  },
+  content: {
+    web: ['Astro + islands','Render articles and catalog pages as HTML. Add interactive islands only where readers need search, filters or other controls.','Frequent updates across islands can make state ownership harder to follow.'],
+    desktop: ['Static HTML + Tauri','Bundle an offline handbook in a desktop window. Astro can generate the pages when the collection grows.','Local navigation, search and media must use resources that ship with the app to work offline.']
+  },
+  compute: {
+    web: ['TypeScript + Rust/Wasm','Keep the interface in TypeScript and benchmark the expensive operation as a Wasm module. Choose Leptos if you also want Rust for the UI.','Measure cold startup and data transfer alongside calculation time.'],
+    desktop: ['Tauri + native Rust','Run expensive calculations in native Rust off the UI thread. Use TypeScript or Leptos for controls and progress updates.','Batch work across the native boundary and measure responsiveness with realistic inputs.']
+  }
+};
+const picker = document.querySelector('#picker');
+function recommend() {
+  const kind = picker.querySelector('[name=kind]:checked').value;
+  const target = picker.querySelector('[name=target]:checked').value;
+  const [stack, reason, trade] = paths[kind][target];
+  document.querySelector('#stack').textContent = stack;
+  document.querySelector('#reason').textContent = reason;
+  document.querySelector('#trade').textContent = trade;
+}
+picker.addEventListener('change', recommend);
+const tasks = [...document.querySelectorAll('#tasks input')];
+const selected = new Set(tasks.filter(input => input.checked).map(input => input.value));
+function renderTasks() {
+  for (const input of tasks) input.checked = selected.has(input.value);
+  document.querySelector('#count').textContent = selected.size + ' of ' + tasks.length + ' ready';
+}
+for (const input of tasks) {
+  input.addEventListener('change', () => {
+    if (input.checked) selected.add(input.value);
+    else selected.delete(input.value);
+    renderTasks();
+  });
+}
+recommend();
+renderTasks();
+</script></body></html>
