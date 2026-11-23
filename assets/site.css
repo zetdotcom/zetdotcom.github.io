@@ -44,7 +44,7 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 .notebook-name img { border-radius: 50%; object-fit: cover; object-position: center 75%; }
 .notebook-name > span { line-height: 1.1; }
 .masthead-role {
-    display: block;
+    display: inline-block;
     margin-top: .2rem;
     color: var(--muted);
     font: 400 .875rem/1.25 var(--sans);
