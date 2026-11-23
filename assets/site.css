@@ -339,6 +339,75 @@ h2 {
     margin-top: 0.25rem;
 }
 
+.article-page {
+    max-width: 51rem;
+}
+
+.reading-article {
+    padding: clamp(1.15rem, 5vw, 3rem);
+    line-height: 1.7;
+}
+
+.reading-article h1 {
+    max-width: 16ch;
+    margin: 1.5rem 0;
+    font-size: clamp(2.2rem, 7vw, 4.4rem);
+    line-height: 1.02;
+}
+
+.reading-article a {
+    text-decoration: underline;
+}
+
+.article-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: space-between;
+}
+
+.article-body > * + * {
+    margin-top: 1.25rem;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.article-body th,
+.article-body td {
+    padding: clamp(0.45rem, 2vw, 0.85rem);
+    border: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+}
+
+.article-body thead {
+    background: var(--accent);
+}
+
+.article-body tbody th {
+    width: 35%;
+    background: var(--surface-2);
+    font-weight: 600;
+}
+
+.article-body code {
+    padding: 0.1em 0.25em;
+    border-radius: 4px;
+    background: var(--surface-2);
+}
+
+.article-footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+}
+
 @media (max-width: 720px) {
     .page {
         padding: 1rem 1rem 2rem;

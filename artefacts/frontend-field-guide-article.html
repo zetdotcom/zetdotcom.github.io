@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="How to choose a frontend stack for coding agents, with framework recommendations for utilities, apps, and content sites."
+        />
+        <title>Choosing a frontend for coding agents | Michał Zet</title>
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="section panel reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#frontend-field-guide">Knowledge base</a>
+                        <a href="frontend-field-guide.html">Open interactive guide</a>
+                    </nav>
+                    <h1>Choosing a frontend for coding agents</h1>
+                </header>
+
+                <!-- Keep the article and frontend-field-guide.md in sync. -->
+                <div class="article-body">
+                    <p>
+                        <strong>For a small utility, start with HTML, CSS and
+                        vanilla TypeScript. For an interactive app with several
+                        connected views, my default is React + TypeScript with
+                        Vite and React Router.</strong> These are engineering
+                        judgments. No cross-framework agent benchmark underlies
+                        this guide.
+                    </p>
+                    <p>
+                        Agents benefit from a predictable place to make a change,
+                        types that catch mistakes, documentation matching the
+                        installed version, and a browser test that proves the
+                        user flow works. Pick one example feature for the agent
+                        to follow. In React especially, decide how routes, forms
+                        and data fetching work before each feature grows its own
+                        convention.
+                    </p>
+
+                    <table aria-label="Frontend stack comparison">
+                        <thead>
+                            <tr>
+                                <th scope="col">When the product needs…</th>
+                                <th scope="col">A good starting point</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">A calculator, a form or independent controls</th>
+                                <td>Vanilla JS or TS with native DOM events. Add jQuery when a valuable plugin or existing codebase warrants it.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Shared state across interactive views</th>
+                                <td>React + TS. Consider Vue / Nuxt for template-oriented components, or SvelteKit for compact components and official agent tooling.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Server-rendered React with integrated routing</th>
+                                <td>Next.js. Its dev server exposes errors and route information to agents. Review where code runs and how data is cached.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Strong conventions across a large application</th>
+                                <td>Angular. Its CLI, framework conventions and official agent guidance give separate changes a common structure.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Content pages with isolated interactive widgets</th>
+                                <td>Astro with islands. Reconsider the boundaries if many widgets routinely share live state.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        <strong>State and rendering.</strong> Keep a value local
+                        until multiple views need it. With vanilla TS, Zustand's
+                        <code>zustand/vanilla</code> store lets event handlers
+                        call named actions and views subscribe to changes.
+                        Render the initial value, update the affected DOM nodes
+                        and unsubscribe when a view is removed. Derive totals
+                        from source data. Nano Stores suits small independent
+                        stores. Signals Core suits linked calculations. For
+                        dynamic templates, standalone lit-html can handle
+                        updates. Once you are defining routing, mounting and
+                        cleanup conventions across screens, an established
+                        framework can save maintenance work.
+                    </p>
+                    <p>
+                        <strong>Rust and performance.</strong> Leptos combines
+                        reactive state and rendering. Signals and keyed lists
+                        help keep edits local as a UI grows. A small JS app can
+                        update the same DOM node directly and ship less code.
+                        Measure cold startup and a representative interaction on
+                        a target device. If image processing or another
+                        calculation dominates, benchmark a Rust/Wasm module
+                        behind a TypeScript UI. Rust's compiler gives agents
+                        feedback about ownership and types. Browser tests still
+                        need to verify the experience.
+                    </p>
+                    <p>
+                        <strong>Desktop delivery.</strong> Tauri can package
+                        vanilla TS or a client-rendered Leptos UI in a desktop
+                        window, with native Rust for local operations. Ship a
+                        build per target. Windows commonly uses an installer and
+                        WebView2, macOS an app bundle, and Linux can use a
+                        single-file AppImage. For a desktop-first Rust product,
+                        also consider Dioxus.
+                    </p>
+                    <p>
+                        <strong>Official reading:</strong>
+                        <a href="https://react.dev/learn/creating-a-react-app">React framework choices</a> ·
+                        <a href="https://svelte.dev/docs/ai/overview">Svelte agent tools</a> ·
+                        <a href="https://zustand.docs.pmnd.rs/reference/apis/create-store">Zustand vanilla</a> ·
+                        <a href="https://lit.dev/docs/libraries/standalone-templates/">standalone lit-html</a> ·
+                        <a href="https://book.leptos.dev/">Leptos book</a> ·
+                        <a href="https://v2.tauri.app/distribute/">Tauri distribution</a>.
+                    </p>
+                </div>
+
+                <footer class="article-footer">
+                    <a href="frontend-field-guide.md" download>Download Markdown</a>
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>
