@@ -12,37 +12,46 @@
 <body class="journal">
     <a class="skip" href="#main">Skip to content</a>
     <header class="letterhead">
-        <a class="notebook-name" href="./" aria-label="Michał’s notebook, home">Michał’s notebook</a>
+        <a class="notebook-name" href="./" aria-label="Michał’s notebook, home"><img src="assets/profile-picture.webp" alt="" width="44" height="44">Michał’s notebook</a>
         <nav aria-label="Main navigation"><a href="#work">Projects</a><a href="#writing">Writing</a></nav>
     </header>
     <main id="main">
         <section class="letter" aria-labelledby="hello">
-            <figure class="snapshot">
-                <img src="assets/profile-picture.webp" alt="Michał in sunglasses, with hills behind him" width="720" height="987">
-                <figcaption>Michał Zadarnowski</figcaption>
-            </figure>
+            <img class="landscape" src="assets/foothills.webp" alt="" fetchpriority="high">
             <div class="letter-copy">
-                <h1 id="hello"><span lang="pl">Cześć</span>, I’m Michał.</h1>
-                <p>I’m a product engineer in Poland, a husband and a father of four. Most of my work is on the front end.</p>
+                <h1 id="hello"><span lang="pl">Cześć,</span><br>I’m Michał.</h1>
+                <p>I’m Michał Zadarnowski, a product engineer in Poland, a husband and a father of four. Most of my work is on the front end.</p>
             </div>
         </section>
         <section id="work" class="journal-section" aria-labelledby="work-title">
             <header class="section-heading"><h2 id="work-title">Projects</h2></header>
             <div class="project-stories">
                 <article>
-                    <h3><a href="https://michalzet.com/mindreel" target="_blank" rel="noopener noreferrer">MindReel</a></h3>
+                    <a class="project-cover" href="https://michalzet.com/mindreel" target="_blank" rel="noopener noreferrer">
+                        <div class="screen work-log"><img src="assets/mindreel.webp" alt="Activity log grouped by week and day" width="700" height="600"></div>
+                        <h3>MindReel</h3>
+                    </a>
                     <p>I kept forgetting to open my work log. I built MindReel to prompt me during the day. I write down what I’m working on, or pick a recent activity if I’m still on the same task.</p>
                     <p>I can look back through my entries and read an AI summary of the week.</p>
                 </article>
                 <article>
-                    <h3><a href="https://michalzet.com/workflow-agent" target="_blank" rel="noopener noreferrer">workflow-agent</a></h3>
+                    <a class="project-cover" href="https://michalzet.com/workflow-agent" target="_blank" rel="noopener noreferrer">
+                        <div class="screen workflow"><img src="assets/workflow-agent.webp" alt="Project overview with ticket lifecycle and design principles" width="1200" height="799"></div>
+                        <h3>workflow-agent</h3>
+                    </a>
                     <p>I wanted to see what my coding agent remembered about a project and correct it myself. I built workflow-agent to keep its tickets in local files I can read, edit, and version with Git.</p>
                 </article>
             </div>
-            <dl class="project-index">
-                <div><dt><a href="https://breathwork.michalzet.deno.net/" target="_blank" rel="noopener noreferrer">Breathwork</a></dt><dd>A breathing trainer inspired by the Wim Hof method.</dd></div>
-                <div><dt><a href="https://michalzet.com/smart_apps" target="_blank" rel="noopener noreferrer">Smart Apps</a></dt><dd>Research into small language models that turn intent into actions. Also available as <a href="https://michalzet.com/smart_apps/slides" target="_blank" rel="noopener noreferrer">a slide deck</a>.</dd></div>
-            </dl>
+            <div class="project-index">
+                <article>
+                    <img src="assets/breathwork.webp" alt="Breathwork Trainer’s breathing circle" width="700" height="1512" loading="lazy">
+                    <div><h3><a href="https://breathwork.michalzet.deno.net/" target="_blank" rel="noopener noreferrer">Breathwork</a></h3><p>A breathing trainer inspired by the Wim Hof method.</p></div>
+                </article>
+                <article>
+                    <img src="assets/smart-apps-slides.webp" alt="Opening slide from the Smart Apps research presentation" width="1100" height="621" loading="lazy">
+                    <div><h3><a href="https://michalzet.com/smart_apps" target="_blank" rel="noopener noreferrer">Smart Apps</a></h3><p>Research into small language models that turn intent into actions. Also available as <a href="https://michalzet.com/smart_apps/slides" target="_blank" rel="noopener noreferrer">a slide deck</a>.</p></div>
+                </article>
+            </div>
         </section>
         <section id="writing" class="journal-section" aria-labelledby="writing-label">
             <header class="section-heading"><h2 id="writing-label">Writing</h2><a href="artefacts/">Knowledge base</a></header>
