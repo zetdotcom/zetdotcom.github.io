@@ -46,10 +46,10 @@ nav a + a { margin-left: 1.1rem; }
 .letterhead nav a:hover, .colophon nav a:hover { text-decoration: underline; }
 .letter {
     display: grid;
-    grid-template-columns: minmax(11rem, 15rem) minmax(0, 1fr);
+    grid-template-columns: minmax(9rem, 11rem) minmax(0, 1fr);
     align-items: center;
     gap: clamp(2.5rem, 6vw, 5.75rem);
-    padding: clamp(3rem, 6vw, 5.5rem) clamp(.6rem, 3.5vw, 3rem);
+    padding: clamp(2rem, 4vw, 3rem) clamp(.6rem, 3.5vw, 3rem);
 }
 .snapshot {
     background: #faf8f1;
@@ -61,7 +61,6 @@ nav a + a { margin-left: 1.1rem; }
 .snapshot figcaption { padding: .5rem 0 .2rem; text-align: center; font-style: italic; font-size: .95rem; }
 .letter-copy h1 { font-size: clamp(2.8rem, 5.5vw, 4.6rem); letter-spacing: -.065em; margin-bottom: .25em; }
 .letter-copy p { font-size: clamp(1.13rem, 1.55vw, 1.36rem); line-height: 1.5; max-width: 43ch; }
-.letter-copy p + p { margin-top: .7em; }
 .journal-section { scroll-margin-top: 1rem; }
 .section-heading { border-block: 1px solid var(--line); padding: .7rem 0; }
 .section-heading h2 { font: 600 1rem/1.5 var(--sans); }
@@ -72,6 +71,15 @@ nav a + a { margin-left: 1.1rem; }
 .entry h3 a:hover { text-decoration: underline; }
 .entry blockquote { margin: 1.2rem 0; font-size: clamp(1.15rem, 1.6vw, 1.4rem); max-width: 54ch; }
 .reading-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.project-stories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2rem, 5vw, 4rem);
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--line);
+}
+.project-stories h3 { font-size: 2rem; letter-spacing: -.045em; }
+.project-stories p { margin-top: .75rem; }
 .project-index { padding-block: .5rem 3rem; }
 .project-index > div { display: grid; grid-template-columns: 1fr 2fr; align-items: baseline; gap: 1rem; padding-block: 1.2rem; border-bottom: 1px solid var(--line); }
 .project-index dt { font-size: 1.5rem; letter-spacing: -.035em; }
@@ -110,6 +118,7 @@ nav a + a { margin-left: 1.1rem; }
     .letter-copy p { font-size: 1.1rem; }
     .desktop-break { display: none; }
     .project-index > div { display: block; }
+    .project-stories { grid-template-columns: 1fr; }
     .article-nav { flex-wrap: wrap; }
     .article-body th, .article-body td { padding: .45rem; }
 }

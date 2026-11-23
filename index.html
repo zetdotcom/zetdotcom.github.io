@@ -13,7 +13,7 @@
     <a class="skip" href="#main">Skip to content</a>
     <header class="letterhead">
         <a class="notebook-name" href="./" aria-label="Michał’s notebook, home">Michał’s notebook</a>
-        <nav aria-label="Main navigation"><a href="#writing">Writing</a><a href="#work">Projects</a></nav>
+        <nav aria-label="Main navigation"><a href="#work">Projects</a><a href="#writing">Writing</a></nav>
     </header>
     <main id="main">
         <section class="letter" aria-labelledby="hello">
@@ -24,8 +24,25 @@
             <div class="letter-copy">
                 <h1 id="hello"><span lang="pl">Cześć</span>, I’m Michał.</h1>
                 <p>I’m a product engineer in Poland, a husband and a father of four. Most of my work is on the front end.</p>
-                <p>I keep this notebook for the things I’m working through. Lately, that’s been how to choose a frontend when a coding agent will be working on it too.</p>
             </div>
+        </section>
+        <section id="work" class="journal-section" aria-labelledby="work-title">
+            <header class="section-heading"><h2 id="work-title">Projects</h2></header>
+            <div class="project-stories">
+                <article>
+                    <h3><a href="https://michalzet.com/mindreel" target="_blank" rel="noopener noreferrer">MindReel</a></h3>
+                    <p>I kept forgetting to open my work log. I built MindReel to prompt me during the day. I write down what I’m working on, or pick a recent activity if I’m still on the same task.</p>
+                    <p>I can look back through my entries and read an AI summary of the week.</p>
+                </article>
+                <article>
+                    <h3><a href="https://michalzet.com/workflow-agent" target="_blank" rel="noopener noreferrer">workflow-agent</a></h3>
+                    <p>I wanted to see what my coding agent remembered about a project and correct it myself. I built workflow-agent to keep its tickets in local files I can read, edit, and version with Git.</p>
+                </article>
+            </div>
+            <dl class="project-index">
+                <div><dt><a href="https://breathwork.michalzet.deno.net/" target="_blank" rel="noopener noreferrer">Breathwork</a></dt><dd>A breathing trainer inspired by the Wim Hof method.</dd></div>
+                <div><dt><a href="https://michalzet.com/smart_apps" target="_blank" rel="noopener noreferrer">Smart Apps</a></dt><dd>Research into small language models that turn intent into actions. Also available as <a href="https://michalzet.com/smart_apps/slides" target="_blank" rel="noopener noreferrer">a slide deck</a>.</dd></div>
+            </dl>
         </section>
         <section id="writing" class="journal-section" aria-labelledby="writing-label">
             <header class="section-heading"><h2 id="writing-label">Writing</h2><a href="artefacts/">Knowledge base</a></header>
@@ -34,15 +51,6 @@
                 <blockquote>“Agents benefit from a predictable place to make a change, types that catch mistakes, documentation matching the installed version, and a browser test that proves the user flow works.”</blockquote>
                 <div class="reading-links"><a href="artefacts/frontend-field-guide-article.html">Read the essay</a><a href="artefacts/frontend-field-guide.html">Try the stack picker</a></div>
             </article>
-        </section>
-        <section id="work" class="journal-section" aria-labelledby="work-title">
-            <header class="section-heading"><h2 id="work-title">Projects</h2></header>
-            <dl class="project-index">
-                <div><dt><a href="https://michalzet.com/mindreel" target="_blank" rel="noopener noreferrer">MindReel</a></dt><dd>A desktop log for the little tasks that fill a working day.</dd></div>
-                <div><dt><a href="https://breathwork.michalzet.deno.net/" target="_blank" rel="noopener noreferrer">Breathwork</a></dt><dd>A breathing trainer inspired by the Wim Hof method.</dd></div>
-                <div><dt><a href="https://michalzet.com/smart_apps" target="_blank" rel="noopener noreferrer">Smart Apps</a></dt><dd>Research into small language models that turn intent into actions. Also available as <a href="https://michalzet.com/smart_apps/slides" target="_blank" rel="noopener noreferrer">a slide deck</a>.</dd></div>
-                <div><dt><a href="https://michalzet.com/workflow-agent" target="_blank" rel="noopener noreferrer">workflow-agent</a></dt><dd>A way for coding agents to keep track of project tickets in the filesystem.</dd></div>
-            </dl>
         </section>
     </main>
     <footer class="colophon">
