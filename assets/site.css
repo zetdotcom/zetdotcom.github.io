@@ -42,6 +42,14 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 }
 .notebook-name { display: flex; align-items: center; gap: .65rem; font-size: clamp(1.35rem, 2vw, 1.85rem); letter-spacing: -.05em; text-decoration: none; font-style: italic; }
 .notebook-name img { border-radius: 50%; object-fit: cover; object-position: center 75%; }
+.notebook-name > span { line-height: 1.1; }
+.masthead-role {
+    display: block;
+    margin-top: .2rem;
+    color: var(--muted);
+    font: 400 .875rem/1.25 var(--sans);
+    letter-spacing: normal;
+}
 nav, .section-heading, .reading-links, .format-label { font: 500 .96rem/1.5 var(--sans); }
 nav a + a { margin-left: 1.1rem; }
 .letterhead nav a, .colophon nav a { text-decoration: none; }
