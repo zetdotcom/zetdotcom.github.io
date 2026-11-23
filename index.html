@@ -1,286 +1,80 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Michał Zet | Product Engineer</title>
-        <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-        <meta
-            name="description"
-            content="Explore Michał Zadarnowski’s projects and knowledge base on frontend development and product engineering."
-        />
-        <link rel="stylesheet" href="assets/site.css" />
-    </head>
-    <body>
-        <main class="page">
-            <div class="shell">
-                <section class="hero panel" aria-labelledby="site-title">
-                    <div class="hero-grid">
-                        <div>
-                            <h1 id="site-title">
-                                Michał <span class="surname">Zadarnowski</span>
-                            </h1>
-                            <p class="lede">
-                                Product Engineer | Senior Software Engineer |
-                                Front-End.
-                            </p>
-                            <p class="subtle">
-                                Husband and father of 4. Based in Poland.
-                            </p>
-                            <a class="knowledge-link" href="artefacts/">
-                                Knowledge base
-                            </a>
-                            <nav class="links" aria-label="Social links">
-                                <a
-                                    class="social-link"
-                                    href="https://github.com/zetdotcom"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1739 15.811 16.7231C15.6489 16.2722 15.3929 15.8618 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 1C19.91 1 18.73 0.65 16 2.48C13.708 1.85982 11.292 1.85982 9 2.48C6.27 0.65 5.09 1 5.09 1C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.8881 9.35726 16.2936 9.19531 16.7386C9.03335 17.1835 8.96692 17.6578 9 18.13V22"
-                                            stroke="currentColor"
-                                            stroke-width="2.2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                    GitHub
-                                </a>
-                                <a
-                                    class="social-link"
-                                    href="https://www.linkedin.com/in/michal-zadarnowski"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M16 8A6 6 0 0 1 22 14V21H18V14A2 2 0 0 0 14 14V21H10V9H14V11A4 4 0 0 1 16 8Z"
-                                            stroke="currentColor"
-                                            stroke-width="2.2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                        <path
-                                            d="M6 9H2V21H6V9Z"
-                                            stroke="currentColor"
-                                            stroke-width="2.2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                        <path
-                                            d="M4 5A2 2 0 1 0 4 1A2 2 0 0 0 4 5Z"
-                                            stroke="currentColor"
-                                            stroke-width="2.2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                    LinkedIn
-                                </a>
-                                <a
-                                    class="social-link"
-                                    href="https://medium.com/@michal.zadarnowski"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M4 6.5C4 6.22386 4.22386 6 4.5 6H7.38268C7.64542 6 7.88996 6.12919 8.03666 6.34544L11.5 11.45L14.9633 6.34544C15.11 6.12919 15.3546 6 15.6173 6H18.5C18.7761 6 19 6.22386 19 6.5V17.5C19 17.7761 18.7761 18 18.5 18H16.5C16.2239 18 16 17.7761 16 17.5V11.7L13.0946 16.032C12.9074 16.3111 12.5933 16.4788 12.2572 16.4788H10.7428C10.4067 16.4788 10.0926 16.3111 9.90536 16.032L7 11.7V17.5C7 17.7761 6.77614 18 6.5 18H4.5C4.22386 18 4 17.7761 4 17.5V6.5Z"
-                                            stroke="currentColor"
-                                            stroke-width="2.2"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                    Medium
-                                </a>
-                                <a
-                                    class="social-link"
-                                    href="https://x.com/zetdotcomdev"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M18 3H21L14.4 10.54L22 21H16.05L11.39 14.65L5.85 21H2.85L9.91 12.91L2.62 3H8.72L12.93 8.77L18 3Z"
-                                            stroke="currentColor"
-                                            stroke-width="2.2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                    X
-                                </a>
-                            </nav>
-                        </div>
-
-                        <div>
-                            <img
-                                class="portrait"
-                                src="assets/profile-picture.webp"
-                                alt="Michal Zadarnowski"
-                            />
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section panel">
-                    <div class="section-grid">
-                        <h2>Selected Projects</h2>
-                        <div class="projects">
-                            <a
-                                class="project"
-                                href="https://breathwork.michalzet.deno.net/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img
-                                    class="project-media"
-                                    src="assets/breathwork.webp"
-                                    alt="Breathwork project preview"
-                                    width="16"
-                                    height="10"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="project-body">
-                                    <h3 class="project-title">Breathwork</h3>
-                                    <p>
-                                        A web application for breathing training
-                                        inspired by the Wim Hof method.
-                                    </p>
-                                </div>
-                            </a>
-
-                            <a
-                                class="project"
-                                href="https://michalzet.com/mindreel"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img
-                                    class="project-media"
-                                    src="assets/mindreel.webp"
-                                    alt="MindReel project preview"
-                                    width="16"
-                                    height="10"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="project-body">
-                                    <h3 class="project-title">MindReel</h3>
-                                    <p>
-                                        Desktop app for easy task logging
-                                        throughout the day.
-                                    </p>
-                                </div>
-                            </a>
-
-                            <a
-                                class="project"
-                                href="https://michalzet.com/smart_apps"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img
-                                    class="project-media"
-                                    src="assets/smart-apps.webp"
-                                    alt="Smart Apps research project preview"
-                                    width="16"
-                                    height="10"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="project-body">
-                                    <h3 class="project-title">
-                                        Smart Apps research
-                                    </h3>
-                                    <p>
-                                        Research into and concept for smart apps
-                                        powered by small language models that
-                                        understand user intent and can perform
-                                        defined actions.
-                                    </p>
-                                </div>
-                            </a>
-
-                            <a
-                                class="project"
-                                href="https://michalzet.com/smart_apps/slides"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img
-                                    class="project-media"
-                                    src="assets/smart-apps-slides.webp"
-                                    alt="Smart Apps slides project preview"
-                                    width="16"
-                                    height="10"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="project-body">
-                                    <h3 class="project-title">
-                                        Smart Apps slides
-                                    </h3>
-                                    <p>
-                                        An easier-to-digest slide-format
-                                        presentation of Smart Apps research.
-                                    </p>
-                                </div>
-                            </a>
-
-                            <a
-                                class="project"
-                                href="https://michalzet.com/workflow-agent"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img
-                                    class="project-media"
-                                    src="assets/workflow-agent.webp"
-                                    alt="workflow-agent project preview"
-                                    width="16"
-                                    height="10"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <div class="project-body">
-                                    <h3 class="project-title">
-                                        workflow-agent
-                                    </h3>
-                                    <p>
-                                        A filesystem-based ticket lifecycle
-                                        skill that gives AI coding agents
-                                        structured project management.
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F2EFE9">
+    <title>Michał Zet | Product Engineer</title>
+    <meta name="description" content="Projects and field notes by Michał Zadarnowski, a product engineer based in Poland.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="masthead frame">
+        <a class="signature" href="./" aria-label="Michał Zet, home">
+            <img src="assets/profile-picture.webp" alt="" width="40" height="40">
+            Michał Zet<span aria-hidden="true">.</span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="#work">Projects</a>
+            <a href="artefacts/">Knowledge base</a>
+        </nav>
+    </header>
+    <main id="main" class="frame">
+        <section class="intro" aria-labelledby="intro-title">
+            <div class="intro-copy">
+                <p class="eyebrow"><span class="rule"></span> Senior software engineer</p>
+                <h1 id="intro-title">Product<br><em>engineer.</em></h1>
+                <p class="bio">I’m Michał Zadarnowski, a front-end engineer based in Poland. Husband and father of four.</p>
+                <a class="button" href="#work">Explore my work</a>
             </div>
-        </main>
-    </body>
+            <img class="sculpture" src="assets/ribbon.webp" alt="" fetchpriority="high">
+        </section>
+        <nav class="socials" aria-label="Social links">
+            <a href="https://github.com/zetdotcom" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/michal-zadarnowski" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://medium.com/@michal.zadarnowski" target="_blank" rel="noopener noreferrer">Medium</a>
+            <a href="https://x.com/zetdotcomdev" target="_blank" rel="noopener noreferrer">X</a>
+        </nav>
+        <section class="work" id="work" aria-labelledby="work-title">
+            <h2 id="work-title">Selected <em>projects</em></h2>
+            <a class="feature" href="https://breathwork.michalzet.deno.net/" target="_blank" rel="noopener noreferrer">
+                <div class="feature-copy">
+                    <p class="eyebrow">Web application</p>
+                    <h3>Breathwork</h3>
+                    <p>A breathing trainer inspired by the Wim Hof method.</p>
+                    <span class="text-link">Open project</span>
+                </div>
+                <div class="breath-preview">
+                    <img src="assets/breathwork.webp" alt="Breathwork Trainer start screen" width="700" height="1512" loading="lazy">
+                </div>
+            </a>
+            <div class="projects">
+                <a class="project" href="https://michalzet.com/mindreel" target="_blank" rel="noopener noreferrer">
+                    <div class="media"><img src="assets/mindreel.webp" alt="MindReel task log" loading="lazy"></div>
+                    <div><p class="eyebrow">Desktop application</p><h3>MindReel</h3><p>A desktop app for logging tasks throughout the day.</p></div>
+                </a>
+                <a class="project" href="https://michalzet.com/smart_apps" target="_blank" rel="noopener noreferrer">
+                    <div class="media"><img src="assets/smart-apps.webp" alt="Smart Apps research preview" loading="lazy"></div>
+                    <div><p class="eyebrow">Research</p><h3>Smart Apps</h3><p>Exploring how small language models can understand intent and perform defined actions.</p></div>
+                </a>
+                <a class="project" href="https://michalzet.com/smart_apps/slides" target="_blank" rel="noopener noreferrer">
+                    <div class="media"><img src="assets/smart-apps-slides.webp" alt="Smart Apps presentation" loading="lazy"></div>
+                    <div><p class="eyebrow">Slide deck</p><h3>Smart Apps slides</h3><p>A slide-by-slide introduction to the Smart Apps research.</p></div>
+                </a>
+                <a class="project" href="https://michalzet.com/workflow-agent" target="_blank" rel="noopener noreferrer">
+                    <div class="media"><img src="assets/workflow-agent.webp" alt="Workflow-agent project preview" loading="lazy"></div>
+                    <div><p class="eyebrow">Agent skill</p><h3>workflow-agent</h3><p>A filesystem-based ticket lifecycle for AI coding agents.</p></div>
+                </a>
+            </div>
+        </section>
+        <section class="notes" aria-labelledby="notes-title">
+            <p class="eyebrow">Knowledge base</p>
+            <h2 id="notes-title">Choosing a frontend<br><em>for coding agents</em></h2>
+            <div class="formats-inline"><a href="artefacts/frontend-field-guide-article.html">Read the article</a><a href="artefacts/frontend-field-guide.html">Open interactive guide</a></div>
+        </section>
+    </main>
+    <footer class="frame foot"><b>Michał Zet.</b><a href="#main">Back to top</a></footer>
+</body>
 </html>
