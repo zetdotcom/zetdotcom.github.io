@@ -89,17 +89,25 @@ nav a + a { margin-left: 1.1rem; }
 }
 .project-stories h3 { font-size: 2rem; letter-spacing: -.045em; }
 .project-stories p { margin-top: .65rem; max-width: 52ch; }
-.project-cover { display: block; text-decoration: none; }
-.project-cover:hover h3, .project-cover:focus-visible h3 { text-decoration: underline; }
-.screen { display: grid; place-items: start center; aspect-ratio: 1.95; overflow: hidden; margin-bottom: 1rem; padding-top: 6%; }
-.screen img { display: block; width: 84%; height: auto; box-shadow: 0 4px 24px #1a332432; border-radius: 5px; }
-.work-log { background: radial-gradient(#9baea14d 1px, transparent 1px) 0 0 / 9px 9px, var(--canopy); }
-.workflow { background: repeating-linear-gradient(140deg, transparent 0 13px, #fff3 14px, transparent 15px), #bacbb8; }
-.project-index { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; padding-block: 1.5rem; }
-.project-index article { display: grid; grid-template-columns: minmax(5.5rem, 30%) 1fr; align-items: center; gap: 1rem; }
-.project-index img { display: block; width: 100%; height: 8rem; object-fit: cover; border: 1px solid var(--line); }
-.project-index h3 { font-size: 1.5rem; letter-spacing: -.035em; }
-.project-index p { color: var(--muted); line-height: 1.45; margin-top: .35rem; }
+.project-plate { position: relative; margin-bottom: 1rem; }
+.project-plate > a { display: block; }
+.print { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.screen-detail {
+    position: absolute;
+    right: 3%;
+    bottom: 4%;
+    width: fit-content;
+    max-width: 25%;
+    height: 27%;
+    border: 3px solid var(--paper);
+    background: var(--paper);
+    box-shadow: 0 1px 7px #12271960;
+    cursor: zoom-in;
+}
+.screen-detail img { display: block; width: auto; max-width: 100%; height: 100%; object-fit: contain; }
+.screen-detail:hover, .screen-detail:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.project-stories h3 a { text-decoration: none; }
+.project-stories h3 a:hover { text-decoration: underline; }
 .colophon { border-top: 4px double var(--ink); padding: 1rem 0 3rem; flex-wrap: wrap; }
 .colophon span { font-style: italic; }
 .page { padding-block: clamp(2rem, 5vw, 4rem); }
@@ -136,7 +144,7 @@ nav a + a { margin-left: 1.1rem; }
     .letter-copy h1 span { margin-right: .15em; }
     .letter-copy p { max-width: 45ch; }
     .desktop-break { display: none; }
-    .project-index, .project-stories { grid-template-columns: 1fr; }
+    .project-stories { grid-template-columns: 1fr; }
     .article-nav { flex-wrap: wrap; }
     .article-body th, .article-body td { padding: .45rem; }
 }
