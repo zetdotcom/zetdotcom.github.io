@@ -4,77 +4,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#F2EFE9">
-    <title>Michał Zet | Product Engineer</title>
-    <meta name="description" content="Projects and field notes by Michał Zadarnowski, a product engineer based in Poland.">
+    <title>Michał’s notebook | Michał Zadarnowski</title>
+    <meta name="description" content="Michał Zadarnowski’s personal notebook on product engineering, with essays, small tools, and research.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body class="journal">
     <a class="skip" href="#main">Skip to content</a>
-    <header class="masthead frame">
-        <a class="signature" href="./" aria-label="Michał Zet, home">
-            <img src="assets/profile-picture.webp" alt="" width="40" height="40">
-            Michał Zet<span aria-hidden="true">.</span>
-        </a>
-        <nav aria-label="Main navigation">
-            <a href="#work">Projects</a>
-            <a href="artefacts/">Knowledge base</a>
-        </nav>
+    <header class="letterhead">
+        <a class="notebook-name" href="./" aria-label="Michał’s notebook, home">Michał’s notebook</a>
+        <nav aria-label="Main navigation"><a href="#writing">Writing</a><a href="#work">Projects</a></nav>
     </header>
-    <main id="main" class="frame">
-        <section class="intro" aria-labelledby="intro-title">
-            <div class="intro-copy">
-                <p class="eyebrow"><span class="rule"></span> Senior software engineer</p>
-                <h1 id="intro-title">Product<br><em>engineer.</em></h1>
-                <p class="bio">I’m Michał Zadarnowski, a front-end engineer based in Poland. Husband and father of four.</p>
-                <a class="button" href="#work">Explore my work</a>
+    <main id="main">
+        <section class="letter" aria-labelledby="hello">
+            <figure class="snapshot">
+                <img src="assets/profile-picture.webp" alt="Michał in sunglasses, with hills behind him" width="720" height="987">
+                <figcaption>Michał Zadarnowski</figcaption>
+            </figure>
+            <div class="letter-copy">
+                <h1 id="hello"><span lang="pl">Cześć</span>, I’m Michał.</h1>
+                <p>I’m a product engineer in Poland, a husband and a father of four. Most of my work is on the front end.</p>
+                <p>I keep this notebook for the things I’m working through. Lately, that’s been how to choose a frontend when a coding agent will be working on it too.</p>
             </div>
-            <img class="sculpture" src="assets/ribbon.webp" alt="" fetchpriority="high">
         </section>
-        <nav class="socials" aria-label="Social links">
+        <section id="writing" class="journal-section" aria-labelledby="writing-label">
+            <header class="section-heading"><h2 id="writing-label">Writing</h2><a href="artefacts/">Knowledge base</a></header>
+            <article class="entry">
+                <h3><a href="artefacts/frontend-field-guide-article.html">Choosing a frontend<br class="desktop-break"> for coding agents</a></h3>
+                <blockquote>“Agents benefit from a predictable place to make a change, types that catch mistakes, documentation matching the installed version, and a browser test that proves the user flow works.”</blockquote>
+                <div class="reading-links"><a href="artefacts/frontend-field-guide-article.html">Read the essay</a><a href="artefacts/frontend-field-guide.html">Try the stack picker</a></div>
+            </article>
+        </section>
+        <section id="work" class="journal-section" aria-labelledby="work-title">
+            <header class="section-heading"><h2 id="work-title">Projects</h2></header>
+            <dl class="project-index">
+                <div><dt><a href="https://michalzet.com/mindreel" target="_blank" rel="noopener noreferrer">MindReel</a></dt><dd>A desktop log for the little tasks that fill a working day.</dd></div>
+                <div><dt><a href="https://breathwork.michalzet.deno.net/" target="_blank" rel="noopener noreferrer">Breathwork</a></dt><dd>A breathing trainer inspired by the Wim Hof method.</dd></div>
+                <div><dt><a href="https://michalzet.com/smart_apps" target="_blank" rel="noopener noreferrer">Smart Apps</a></dt><dd>Research into small language models that turn intent into actions. Also available as <a href="https://michalzet.com/smart_apps/slides" target="_blank" rel="noopener noreferrer">a slide deck</a>.</dd></div>
+                <div><dt><a href="https://michalzet.com/workflow-agent" target="_blank" rel="noopener noreferrer">workflow-agent</a></dt><dd>A way for coding agents to keep track of project tickets in the filesystem.</dd></div>
+            </dl>
+        </section>
+    </main>
+    <footer class="colophon">
+        <span>Michał Zadarnowski</span>
+        <nav aria-label="Social links">
             <a href="https://github.com/zetdotcom" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://www.linkedin.com/in/michal-zadarnowski" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://medium.com/@michal.zadarnowski" target="_blank" rel="noopener noreferrer">Medium</a>
             <a href="https://x.com/zetdotcomdev" target="_blank" rel="noopener noreferrer">X</a>
         </nav>
-        <section class="work" id="work" aria-labelledby="work-title">
-            <h2 id="work-title">Selected <em>projects</em></h2>
-            <a class="feature" href="https://breathwork.michalzet.deno.net/" target="_blank" rel="noopener noreferrer">
-                <div class="feature-copy">
-                    <p class="eyebrow">Web application</p>
-                    <h3>Breathwork</h3>
-                    <p>A breathing trainer inspired by the Wim Hof method.</p>
-                    <span class="text-link">Open project</span>
-                </div>
-                <div class="breath-preview">
-                    <img src="assets/breathwork.webp" alt="Breathwork Trainer start screen" width="700" height="1512" loading="lazy">
-                </div>
-            </a>
-            <div class="projects">
-                <a class="project" href="https://michalzet.com/mindreel" target="_blank" rel="noopener noreferrer">
-                    <div class="media"><img src="assets/mindreel.webp" alt="MindReel task log" loading="lazy"></div>
-                    <div><p class="eyebrow">Desktop application</p><h3>MindReel</h3><p>A desktop app for logging tasks throughout the day.</p></div>
-                </a>
-                <a class="project" href="https://michalzet.com/smart_apps" target="_blank" rel="noopener noreferrer">
-                    <div class="media"><img src="assets/smart-apps.webp" alt="Smart Apps research preview" loading="lazy"></div>
-                    <div><p class="eyebrow">Research</p><h3>Smart Apps</h3><p>Exploring how small language models can understand intent and perform defined actions.</p></div>
-                </a>
-                <a class="project" href="https://michalzet.com/smart_apps/slides" target="_blank" rel="noopener noreferrer">
-                    <div class="media"><img src="assets/smart-apps-slides.webp" alt="Smart Apps presentation" loading="lazy"></div>
-                    <div><p class="eyebrow">Slide deck</p><h3>Smart Apps slides</h3><p>A slide-by-slide introduction to the Smart Apps research.</p></div>
-                </a>
-                <a class="project" href="https://michalzet.com/workflow-agent" target="_blank" rel="noopener noreferrer">
-                    <div class="media"><img src="assets/workflow-agent.webp" alt="Workflow-agent project preview" loading="lazy"></div>
-                    <div><p class="eyebrow">Agent skill</p><h3>workflow-agent</h3><p>A filesystem-based ticket lifecycle for AI coding agents.</p></div>
-                </a>
-            </div>
-        </section>
-        <section class="notes" aria-labelledby="notes-title">
-            <p class="eyebrow">Knowledge base</p>
-            <h2 id="notes-title">Choosing a frontend<br><em>for coding agents</em></h2>
-            <div class="formats-inline"><a href="artefacts/frontend-field-guide-article.html">Read the article</a><a href="artefacts/frontend-field-guide.html">Open interactive guide</a></div>
-        </section>
-    </main>
-    <footer class="frame foot"><b>Michał Zet.</b><a href="#main">Back to top</a></footer>
+    </footer>
 </body>
 </html>
