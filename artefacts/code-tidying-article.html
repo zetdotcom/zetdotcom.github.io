@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tidy the code you need to change | Michał Zadarnowski</title>
+        <meta
+            name="description"
+            content="Use small refactorings to make the next change easier to review."
+        />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+        <link rel="stylesheet" href="../assets/field-notes.css" />
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#code-tidying">Knowledge base</a>
+                        <a href="code-tidying.html">Open interactive guide</a>
+                    </nav>
+                    <h1>Tidy the code you need to change</h1>
+                </header>
+                <div class="article-body field-note">
+                    <p>
+                        A change to payroll should be easy to describe in a review. If the first
+                        half of the diff rearranges nested conditions and the second half changes
+                        who gets paid, the reviewer has two puzzles to solve at once. A small
+                        tidying gives each puzzle its own turn. First make today’s rules legible.
+                        Then change the rule.
+                    </p>
+                    <p>
+                        Kent Beck calls these small structural edits “tidyings” in
+                        <cite>Tidy First?</cite>. The question in the title matters. If moving
+                        things around makes the change in front of you easier to understand, do it.
+                        If the change is already obvious, there may be nothing to earn by tidying
+                        first.
+                    </p>
+                    <h2>Put the exceptions where you can see them</h2>
+                    <p>
+                        Imagine a payroll function with separate rates for a former employee,
+                        someone on leave, and someone working their usual hours. A guard clause can
+                        finish an exceptional case early and leave the ordinary calculation at the
+                        bottom.
+                    </p>
+                    <pre><code>function getPayAmount(employee) {
+    if (employee.hasLeft) return departurePay(employee);
+    if (employee.isOnLeave) return leavePay(employee);
+    return regularPay(employee);
+}</code></pre>
+                    <p>
+                        The order carries a business rule. If both flags can be true, departure pay
+                        wins. Keep an example with both flags set when flattening the original
+                        nesting. Apply the same care when making two branches look alike. In
+                        JavaScript, “missing” and “zero” can lead to different outcomes even when
+                        both values fail a truthiness check.
+                    </p>
+                    <h2>Give the reader the missing noun</h2>
+                    <p>
+                        Suppose a delivery fee disappears when
+                        <code>subtotalCents &gt;= 5000</code>. A name such as
+                        <code>freeDeliveryThresholdCents</code> gives the number both a purpose and
+                        a unit. An explaining variable such as
+                        <code>qualifiesForFreeDelivery</code> gives the expression a role in the
+                        decision. Choose the name that answers the question the next reader would
+                        otherwise have to reconstruct.
+                    </p>
+                    <p>
+                        The same idea works at a function boundary. If a formatter reads a currency
+                        from a global settings object, pass the currency as an explicit parameter.
+                        Inspect every caller first. Reading a setting once at startup and reading it
+                        at checkout can produce different results when someone changes their
+                        preferences.
+                    </p>
+                    <h2>Arrange the file in reading order</h2>
+                    <p>
+                        Read a function from the top with one real input in mind. A blank line
+                        between validation, calculation, and persistence may be enough to make its
+                        stages visible. Move a declaration beside its first useful value when doing
+                        so preserves evaluation order. Put an entry point near the top of a module
+                        and closely related helpers together so that following one operation takes
+                        fewer jumps.
+                    </p>
+                    <p>
+                        Some files need the opposite of another extraction. If three tiny functions
+                        keep handing the same half-finished value to one another, pull the steps
+                        into one place. Once the sequence is visible, extract a helper only when you
+                        can name the work it completes. A narrow interface often emerges from seeing
+                        which values the caller really needs.
+                    </p>
+                    <h2>Leave evidence for the review</h2>
+                    <p>
+                        Remove dead code after checking call sites, registrations, and any
+                        configuration that might refer to it. Keep a comment when it explains a
+                        surprising constraint, such as why rounding happens per line item. A comment
+                        that repeats the arithmetic adds another sentence to maintain.
+                    </p>
+                    <p>
+                        Run the same examples before and after the edit, including an ordinary input
+                        and one at the boundary. In the delivery example, try 4,999, 5,000, and
+                        5,001 cents. A tidy diff should let someone verify that all three answers
+                        stayed the same before reviewing a new price or policy.
+                    </p>
+                </div>
+                <footer class="article-footer">
+                    Adapted from Michał Zadarnowski’s
+                    <a
+                        href="https://medium.com/@michal.zadarnowski/the-high-roi-refactoring-guide-15-tidyings-that-help-you-write-code-like-senior-42e751441fa8"
+                        >original Medium article</a
+                    >, published January 3, 2026.
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>

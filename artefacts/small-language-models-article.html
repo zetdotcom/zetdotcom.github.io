@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Where a small language model earns its place | Michał Zadarnowski</title>
+        <meta
+            name="description"
+            content="Choose a model for a particular task, device, and quality target."
+        />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+        <link rel="stylesheet" href="../assets/field-notes.css" />
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#small-language-models">Knowledge base</a>
+                        <a href="small-language-models.html">Open interactive guide</a>
+                    </nav>
+                    <h1>Where a small language model earns its place</h1>
+                </header>
+                <div class="article-body field-note">
+                    <p>
+                        “Move my dentist appointment to Friday.” That sounds like a job for an
+                        assistant. Look a little closer and most of the work belongs to a calendar.
+                        The calendar knows which appointments exist and which dates are free. The
+                        language model has a smaller job. It needs to recognise what the person
+                        wants and turn it into a request the calendar understands.
+                    </p>
+                    <h2>Find the part that needs language</h2>
+                    <p>
+                        A small language model earns its place when that boundary is clear.
+                        Extracting a reference number from a message, choosing one of six support
+                        categories, and selecting a calendar action all give you an output you can
+                        check. “Help me sort out my week” leaves much more for the model to decide.
+                        Both requests come through the same text box. They deserve different
+                        evaluations.
+                    </p>
+                    <p>
+                        FunctionGemma, built from Gemma 3 270M, is an example of specialising a
+                        model for function calling. In the calendar example, the model might propose
+                        <code>reschedule_event</code> with a date. Application code still has to
+                        resolve the event, check the arguments, and ask which appointment the person
+                        meant if there are two. A well-formed call can still be the wrong call.
+                    </p>
+                    <h2>Give the smaller model a fair test</h2>
+                    <p>
+                        Write down what an acceptable answer looks like before choosing the model.
+                        Collect examples from the task you intend to ship. Include a routine
+                        request, a paraphrase, an ambiguous request, and one the product cannot
+                        fulfil. For each, record whether the right outcome is an action, a
+                        clarifying question, or no action. Keep some examples aside when adjusting
+                        prompts or fine-tuning so you can see whether the improvement carries over.
+                    </p>
+                    <p>
+                        Run those examples on the slowest device you intend to support. Measure the
+                        time from submitting the request to a usable result, including the first
+                        request after launch. Check memory use while the rest of the application is
+                        running. Parameter count alone cannot tell you how long someone will wait
+                        with their calendar open.
+                    </p>
+                    <h2>Decide what stays on the device</h2>
+                    <p>
+                        Local inference can keep the text of an appointment on the device and let a
+                        supported action work offline. Trace the whole operation. A cloud calendar
+                        sync, remotely stored logs, or a second model call may still move data
+                        across that boundary. Decide what the app can promise when the network is
+                        unavailable and what happens when it needs clarification.
+                    </p>
+                    <p>
+                        Mixed routing is worth testing when there is a recognisable group of routine
+                        requests. For instance, handle an unambiguous calendar action locally and
+                        offer a hosted path for an open-ended planning request. Measure how often
+                        that second path runs and how often an incorrect local answer slips through.
+                        Counting only the successful local calls makes the approach look cheaper
+                        than it is.
+                    </p>
+                    <h2>Put a price on the actual workload</h2>
+                    <p>
+                        Start with one month of requests. Estimate the hosted spend for their
+                        typical input and output lengths. Then add up the fixed cost of supporting
+                        local inference and the hosted cost of whatever traffic remains. If usage is
+                        low, even a large local share may save very little. If an action must work
+                        offline, its value may justify local support before any financial
+                        break-even.
+                    </p>
+                    <p>
+                        The companion calculator lets you change those assumptions independently.
+                        Carry the result back to the device tests. The decision is whether this
+                        model can do this job, reliably enough, where people need it.
+                    </p>
+                </div>
+                <footer class="article-footer">
+                    Adapted from Michał Zadarnowski’s
+                    <a
+                        href="https://medium.com/@michal.zadarnowski/the-efficiency-revolution-why-2026-is-the-year-of-the-small-language-models-slm-20c7f64a6e17"
+                        >original Medium article</a
+                    >, published February 3, 2026.
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Debugging asynchronous state with the AI Sandwich | Michał Zadarnowski</title>
+        <meta
+            name="description"
+            content="Collect a focused runtime trace and use it to test a debugging hypothesis."
+        />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+        <link rel="stylesheet" href="../assets/field-notes.css" />
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#ai-sandwich-debugging">Knowledge base</a>
+                        <a href="ai-sandwich-debugging.html">Open interactive guide</a>
+                    </nav>
+                    <h1>Debugging asynchronous state with the AI Sandwich</h1>
+                </header>
+                <div class="article-body field-note">
+                    <p>
+                        A search box sometimes shows yesterday’s selection. Type “oak,” then “elm,”
+                        and the field says “elm” while the results describe oak. Reading the two
+                        success handlers rarely settles the question. Either one looks reasonable on
+                        its own. What you need to know is which one wrote to the screen last.
+                    </p>
+                    <p>
+                        The “AI Sandwich” puts a human-run experiment between two conversations with
+                        an assistant. In the first, ask where to observe the application. In the
+                        second, give the assistant what actually happened and ask it to account for
+                        the result. The middle step gives you both something more useful than
+                        another guess.
+                    </p>
+                    <h2>First pass: design the observation</h2>
+                    <p>
+                        Describe the symptom and one expectation you can test. Here the expectation
+                        is that results always belong to the most recent search. Ask the assistant
+                        to identify where a request gets its identity and where the visible result
+                        changes. A log at those two boundaries tells you more than a dump of the
+                        entire application store.
+                    </p>
+                    <p>
+                        Give each request an identifier. Keep the active request and the request
+                        responsible for the displayed data as separate fields. An ordered trace from
+                        a single run might look like this:
+                    </p>
+                    <pre><code>seq  event       request  active  displayed
+  1  started        A       A        —
+  2  started        B       B        —
+  3  committed      B       B        B
+  4  committed      A       B        A</code></pre>
+                    <p>
+                        Row four is a concrete failure. A response from A changed the display while
+                        B was active. If every line only said “success,” the same trace would look
+                        uneventful.
+                    </p>
+                    <h2>Middle: run one repeatable experiment</h2>
+                    <p>
+                        In a local development build, start with an empty trace. Trigger two
+                        searches with known inputs and controlled response timing. Record the
+                        request start and the state before and after each commit. Track the loading
+                        flag if the symptom involves a spinner. If missing data is plausible, record
+                        a boolean such as <code>hasResults</code> and distinguish an empty list from
+                        a missing payload.
+                    </p>
+                    <p>
+                        One lightweight browser collector is an array on
+                        <code>window.appLogs</code>. Append a fresh object of primitive values at
+                        each boundary so an object mutated later cannot rewrite your view of the
+                        past. In DevTools, inspect the array before copying the JSON for analysis.
+                        Event names, sequence numbers, and per-run request labels are enough for
+                        this case. The query text, headers, and full response bodies add no evidence
+                        about ordering.
+                    </p>
+                    <p>
+                        For example, start a fresh collection before each run and call this helper
+                        immediately after each observed transition. Use locally assigned labels for
+                        the request arguments. The resulting JSON preserves the sequence even when
+                        several writes happen within a single millisecond.
+                    </p>
+                    <pre><code>window.appLogs = [];
+function record(event, request, active, displayed) {
+    window.appLogs.push({
+        seq: window.appLogs.length + 1,
+        event,
+        request,
+        active,
+        displayed
+    });
+}</code></pre>
+                    <h2>Second pass: make the explanation predict something</h2>
+                    <p>
+                        Give the assistant the expectation, reproduction steps, and trace together.
+                        Ask: “Which is the first transition that violates the expectation? Which
+                        earlier event makes that transition possible? What should I see if I reverse
+                        the response order?” A useful answer points to a specific row and makes a
+                        prediction you can disprove.
+                    </p>
+                    <p>
+                        Test the proposed change at the write boundary. If only the current request
+                        may commit, the late A response should still arrive, the trace should mark
+                        it as ignored, and the display should keep B. Reverse the completion order
+                        as a second test. Watch loading and error state as well as the result: a
+                        stale response that clears a spinner can still mislead the person waiting.
+                    </p>
+                    <p>
+                        Turn the failing order into a repeatable regression test and remove the
+                        temporary collector. The interactive guide lets you run both orders and
+                        inspect the effect of a commit guard, one event at a time.
+                    </p>
+                </div>
+                <footer class="article-footer">
+                    Adapted from Michał Zadarnowski’s
+                    <a
+                        href="https://medium.com/@michal.zadarnowski/technical-deep-dive-the-ai-sandwich-debugging-workflow-6ffbb17b4fba"
+                        >original Medium article</a
+                    >, published December 19, 2025.
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>

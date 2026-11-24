@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>A refactoring workbench | Michał Zadarnowski</title>
+        <meta
+            name="description"
+            content="Work through four JavaScript examples and reveal the edits."
+        />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+        <link rel="stylesheet" href="../assets/field-notes.css" />
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#code-tidying">Knowledge base</a>
+                        <a href="code-tidying-article.html">Read the article</a>
+                    </nav>
+                    <h1>A refactoring workbench</h1>
+                </header>
+                <div class="article-body field-note">
+                    <p>
+                        Each exercise starts with working JavaScript and a change request. Decide
+                        what you would tidy first, then open the worked edit. Compare the behaviour
+                        at the boundary before moving on.
+                    </p>
+                    <section class="exercise">
+                        <h2>1. Make the ordinary path visible</h2>
+                        <p>
+                            You’re about to add a new invoice label. What takes precedence when a
+                            paid invoice is also past its due date?
+                        </p>
+                        <pre><code>function label(invoice) {
+    if (!invoice.paid) {
+        if (invoice.overdue) return "Overdue";
+        return "Open";
+    }
+    return "Paid";
+}</code></pre>
+                        <details>
+                            <summary>Reveal the guard clauses</summary>
+                            <pre><code>function label(invoice) {
+    if (invoice.paid) return "Paid";
+    if (invoice.overdue) return "Overdue";
+    return "Open";
+}</code></pre>
+                            <p>
+                                Paid wins, including when both flags are true. Checking overdue
+                                first would silently change which label some customers see. Try all
+                                four combinations of flags.
+                            </p>
+                        </details>
+                    </section>
+                    <section class="exercise">
+                        <h2>2. Name a threshold</h2>
+                        <p>
+                            The free-delivery limit is about to change. What unit is the limit in,
+                            and which side owns the exact boundary?
+                        </p>
+                        <pre><code>function deliveryCents(subtotalCents) {
+    return subtotalCents &gt;= 5000 ? 0 : 450;
+}</code></pre>
+                        <details>
+                            <summary>Reveal the named amounts</summary>
+                            <pre><code>const freeDeliveryThresholdCents = 5000;
+const standardDeliveryCents = 450;
+
+function deliveryCents(subtotalCents) {
+    if (subtotalCents &gt;= freeDeliveryThresholdCents) return 0;
+    return standardDeliveryCents;
+}</code></pre>
+                            <p>
+                                At 4,999 cents delivery costs 450 cents. At 5,000 it is free. Those
+                                two examples pin down the comparison independently of the new names.
+                            </p>
+                        </details>
+                    </section>
+                    <section class="exercise">
+                        <h2>3. Expose the changing input</h2>
+                        <p>
+                            A receipt preview should be able to choose its own currency. Where does
+                            that choice enter the calculation today?
+                        </p>
+                        <pre><code>function formatPrice(value) {
+    return new Intl.NumberFormat("en", {
+        style: "currency",
+        currency: settings.currency
+    }).format(value);
+}
+
+const receipt = formatPrice(total);</code></pre>
+                        <details>
+                            <summary>Reveal the explicit parameter</summary>
+                            <pre><code>function formatPrice(value, currency) {
+    return new Intl.NumberFormat("en", {
+        style: "currency",
+        currency
+    }).format(value);
+}
+
+const receipt = formatPrice(total, settings.currency);</code></pre>
+                            <p>
+                                The existing caller still reads the live setting when it creates the
+                                receipt. A preview can pass its own currency. Compare outputs using
+                                USD and JPY to exercise different fractional-digit conventions.
+                            </p>
+                        </details>
+                    </section>
+                    <section class="exercise">
+                        <h2>4. Keep a meaningful zero</h2>
+                        <p>
+                            Two display helpers look similar. Both support an override, and in both
+                            cases zero is a valid configured value. Which operation can they share?
+                        </p>
+                        <pre><code>function width(settings) {
+    return settings.width ?? 80;
+}
+function indent(settings) {
+    return settings.indent == null ? 4 : settings.indent;
+}</code></pre>
+                        <details>
+                            <summary>Reveal the symmetrical expressions</summary>
+                            <pre><code>function width(settings) {
+    return settings.width ?? 80;
+}
+function indent(settings) {
+    return settings.indent ?? 4;
+}</code></pre>
+                            <p>
+                                For numeric settings, both functions now express the same
+                                missing-value rule. Try an absent key, <code>null</code>, and
+                                <code>0</code>. Replacing the expressions with <code>||</code> would
+                                turn a deliberate zero indent into four spaces.
+                            </p>
+                        </details>
+                    </section>
+                </div>
+                <footer class="article-footer">
+                    A companion to Michał Zadarnowski’s
+                    <a
+                        href="https://medium.com/@michal.zadarnowski/the-high-roi-refactoring-guide-15-tidyings-that-help-you-write-code-like-senior-42e751441fa8"
+                        >original Medium article</a
+                    >, published January 3, 2026.
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>

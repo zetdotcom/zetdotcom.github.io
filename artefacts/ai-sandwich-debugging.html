@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Follow two requests through a race | Michał Zadarnowski</title>
+        <meta
+            name="description"
+            content="Change the response order and inspect each state transition."
+        />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+        <link rel="stylesheet" href="../assets/field-notes.css" />
+        <script defer src="../assets/race-lab.js"></script>
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#ai-sandwich-debugging">Knowledge base</a>
+                        <a href="ai-sandwich-debugging-article.html">Read the article</a>
+                    </nav>
+                    <h1>Follow two requests through a race</h1>
+                </header>
+                <div class="article-body field-note">
+                    <p>
+                        A person searches for <strong>oak</strong> (request A), then
+                        <strong>elm</strong> (request B). The field stays on elm. Predict what the
+                        screen will display when both responses have arrived, then step through the
+                        trace to check.
+                    </p>
+                    <section id="race-lab" class="workbench" hidden>
+                        <fieldset>
+                            <legend>Set up a run</legend>
+                            <label
+                                >Response order
+                                <select id="response-order">
+                                    <option value="BA">B returns first, then A</option>
+                                    <option value="AB">A returns first, then B</option>
+                                </select>
+                            </label>
+                            <label class="check-label"
+                                ><input type="checkbox" id="guard" /> Only let the active request
+                                update the screen</label
+                            >
+                        </fieldset>
+                        <div class="actions">
+                            <button type="button" id="advance">Next event</button>
+                            <button type="button" id="restart">Restart run</button>
+                        </div>
+                        <section class="tool-result">
+                            <h2>Execution trace</h2>
+                            <ol id="trace"></ol>
+                            <p id="race-state" role="status"></p>
+                        </section>
+                    </section>
+                    <noscript
+                        ><p>
+                            This simulation needs JavaScript. With the guard off, a late A response
+                            can replace the elm results with oak. With the guard on, only B can
+                            update the display once the second search starts.
+                        </p></noscript
+                    >
+                    <h2>Look for the first wrong write</h2>
+                    <p>
+                        In the B-then-A run, notice the moment when the screen is correct. Advance
+                        once more. Which response changes it? Restart with the guard enabled. That
+                        same response still arrives, but you can now see why the screen keeps its
+                        previous value.
+                    </p>
+                    <p>
+                        Try A-then-B as well. A correct final screen can hide an earlier flash of
+                        the wrong results or a spinner that disappeared too soon. Compare the state
+                        immediately after the third event in each run.
+                    </p>
+                </div>
+                <footer class="article-footer">
+                    A companion to Michał Zadarnowski’s
+                    <a
+                        href="https://medium.com/@michal.zadarnowski/technical-deep-dive-the-ai-sandwich-debugging-workflow-6ffbb17b4fba"
+                        >original Medium article</a
+                    >, published December 19, 2025.
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>

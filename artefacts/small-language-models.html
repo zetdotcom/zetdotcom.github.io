@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Estimate the cost of routing requests | Michał Zadarnowski</title>
+        <meta name="description" content="Compare hosted, local, and mixed routing costs." />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+        <link rel="stylesheet" href="../assets/field-notes.css" />
+        <script defer src="../assets/routing-cost.js"></script>
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#small-language-models">Knowledge base</a>
+                        <a href="small-language-models-article.html">Read the article</a>
+                    </nav>
+                    <h1>Estimate the cost of routing requests</h1>
+                </header>
+                <div class="article-body field-note">
+                    <p>
+                        Take a month of traffic from one feature. How much of it would have to run
+                        locally to cover the cost of supporting a second model? The starting figures
+                        are an illustrative workload. Replace them with measurements or quotes for
+                        your own feature.
+                    </p>
+                    <form id="routing-inputs" class="workbench">
+                        <fieldset>
+                            <legend>Monthly workload in US dollars</legend>
+                            <div class="input-grid">
+                                <label
+                                    >Requests per month
+                                    <input
+                                        name="requests"
+                                        type="number"
+                                        min="0"
+                                        step="1"
+                                        value="100000"
+                                        required
+                                /></label>
+                                <label
+                                    >Hosted cost per 1,000 requests ($)
+                                    <input
+                                        name="hosted"
+                                        type="number"
+                                        min="0"
+                                        step="any"
+                                        value="2"
+                                        required
+                                /></label>
+                                <label
+                                    >Fixed monthly cost of local inference ($)
+                                    <input
+                                        name="local"
+                                        type="number"
+                                        min="0"
+                                        step="any"
+                                        value="80"
+                                        required
+                                /></label>
+                                <label
+                                    >Requests handled fully on-device (%)
+                                    <input
+                                        name="share"
+                                        type="number"
+                                        min="0"
+                                        max="100"
+                                        step="any"
+                                        value="70"
+                                        required
+                                /></label>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <noscript
+                        ><p>
+                            Enable JavaScript for live results. To calculate the mixed cost by hand,
+                            multiply hosted-only spend by the fraction sent to the server and add
+                            the monthly local cost.
+                        </p></noscript
+                    >
+                    <section
+                        class="tool-result"
+                        aria-live="polite"
+                        aria-atomic="true"
+                        id="cost-result"
+                        hidden
+                    >
+                        <h2>Estimated monthly cost</h2>
+                        <dl class="amounts">
+                            <div>
+                                <dt>Hosted only</dt>
+                                <dd id="hosted-total"></dd>
+                            </div>
+                            <div>
+                                <dt>Mixed routing</dt>
+                                <dd id="mixed-total"></dd>
+                            </div>
+                            <div>
+                                <dt>Local only</dt>
+                                <dd id="local-total"></dd>
+                            </div>
+                        </dl>
+                        <p id="cost-explanation"></p>
+                    </section>
+                    <p role="status" id="cost-error" hidden>
+                        Check the inputs above. Enter a nonnegative number in each field, a whole
+                        number of requests, and a local share from 0 to 100.
+                    </p>
+                    <h2>What the estimate includes</h2>
+                    <p>
+                        Hosted spend scales with the number of requests. Use the average hosted cost
+                        for this workload, including its typical input and output lengths. Mixed
+                        routing pays the fixed local cost plus hosted inference for the remaining
+                        traffic. Both local options assume the device capacity has already been
+                        sized for their workload.
+                    </p>
+                    <p>
+                        The fixed cost can include hardware amortisation, energy, and support. If
+                        those costs change materially with volume, rerun the comparison with a
+                        different figure. Count a request as local only when it finishes without a
+                        hosted call.
+                    </p>
+                    <h2>Check the result against the product</h2>
+                    <p>
+                        Pick one request the local model got wrong. Would sending it to a larger
+                        model fix it, or does the app need to ask a question? Then try a supported
+                        request with the device offline. Those two tests help establish how much
+                        traffic can realistically stay on-device.
+                    </p>
+                </div>
+                <footer class="article-footer">
+                    A companion to Michał Zadarnowski’s
+                    <a
+                        href="https://medium.com/@michal.zadarnowski/the-efficiency-revolution-why-2026-is-the-year-of-the-small-language-models-slm-20c7f64a6e17"
+                        >original Medium article</a
+                    >, published February 3, 2026.
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>

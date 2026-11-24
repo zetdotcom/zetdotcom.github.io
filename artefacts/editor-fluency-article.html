@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Getting fluent with Vim movements in VS Code | Michał Zadarnowski</title>
+        <meta
+            name="description"
+            content="Practice navigating, editing, and moving between panes with the keyboard."
+        />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+        <link rel="stylesheet" href="../assets/field-notes.css" />
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#editor-fluency">Knowledge base</a>
+                        <a href="editor-fluency.html">Open interactive guide</a>
+                    </nav>
+                    <h1>Getting fluent with Vim movements in VS Code</h1>
+                </header>
+                <div class="article-body field-note">
+                    <p>
+                        A Ferris Sweep keyboard made me pay attention to the journeys my hands were
+                        making. I tried Neovim, explored editors such as Kakoune and Helix, and
+                        ended up using Vim movements inside VS Code. That let me keep the project
+                        navigation, language tools, and terminal I already relied on while changing
+                        how I moved through a line of code.
+                    </p>
+                    <h2>Start with a journey you make every day</h2>
+                    <p>
+                        Pick one small trip. Mine might be opening a file, finding a call, reading
+                        its definition, and getting back. On macOS, <kbd>Cmd</kbd> +
+                        <kbd>P</kbd> opens Quick Open in VS Code. Once in the buffer, a Vim-style
+                        <code>/</code> search followed by a name and Enter gets me to the text. With
+                        a language service and Vim extension configured, <code>gd</code> can take me
+                        to the definition and <kbd>Ctrl</kbd> + <kbd>o</kbd> back through the jump
+                        list. <kbd>Ctrl</kbd> + <kbd>i</kbd> moves forward again.
+                    </p>
+                    <p>
+                        That return trip is worth learning early. Following a definition feels
+                        cheaper when you know how to return to the question you were answering. For
+                        a name elsewhere in the project, VS Code’s workspace search is a different
+                        trip. On macOS its usual shortcut is <kbd>Cmd</kbd> + <kbd>Shift</kbd> +
+                        <kbd>F</kbd>.
+                    </p>
+                    <h2>Move in the same units you think in</h2>
+                    <p>
+                        In Normal mode, <code>h</code>, <code>j</code>, <code>k</code>, and
+                        <code>l</code> move left, down, up, and right. They are a starting point. On
+                        a line of identifiers, <code>w</code> moves to the start of the next word,
+                        <code>b</code> goes back to a word start, and <code>e</code> goes to a word
+                        end. When I know the word under the cursor is the one I want elsewhere,
+                        <code>*</code> searches forward for it. On a matching bracket,
+                        <code>%</code> jumps to its partner.
+                    </p>
+                    <p>
+                        Editing gets interesting when you can name the thing to replace. From inside
+                        <code>send(previousValue)</code>, <code>ci(</code> changes the contents of
+                        the parentheses and enters Insert mode. Type <code>nextValue</code>, then
+                        Escape. The parentheses survive. In a similar call, a dot can repeat the
+                        change. Check what the cursor is inside before repeating it.
+                    </p>
+                    <p>
+                        Use the editor’s Rename Symbol command when a change should follow a
+                        declaration and its references. A text operation knows where a word occurs.
+                        The language service can know which occurrences refer to the same symbol.
+                    </p>
+                    <h2>Let context decide what a shortcut does</h2>
+                    <p>
+                        I use splits to keep a call site and an implementation in view. My
+                        directional pane bindings use Option with <code>h</code>, <code>j</code>,
+                        <code>k</code>, and <code>l</code>. I also use <kbd>Cmd</kbd> +
+                        <kbd>Option</kbd> + <kbd>J</kbd> to cycle terminals. These are choices in my
+                        setup. When making your own bindings, check what owns the keypress while the
+                        terminal has focus. VS Code’s Keyboard Shortcuts editor shows the command
+                        and its <code>when</code> condition together.
+                    </p>
+                    <p>
+                        Here’s one binding for that setup. Add the object to the array in VS Code’s
+                        <code>keybindings.json</code>. With the editor focused and a second group to
+                        the left, Option-H moves focus to that group.
+                    </p>
+                    <pre><code>{
+    "key": "alt+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "editorTextFocus"
+}</code></pre>
+                    <p>
+                        For a longer detour, a named Vim mark is another way back. Set a lowercase
+                        mark such as <code>ma</code> for a location in the current file and return
+                        to its exact position with <code>&#96;a</code>. Uppercase marks can span
+                        files in Vim. Try that behaviour in your extension before making it part of
+                        your routine.
+                    </p>
+                    <h2>Rehearse the whole edit</h2>
+                    <p>
+                        Choose a task short enough to repeat twice: open a file, find a call, change
+                        its argument, and return to where you started. Learn the command for
+                        whichever step interrupts your train of thought. Tomorrow, try it in a real
+                        change. That is a better test of a shortcut than remembering its name from a
+                        list.
+                    </p>
+                </div>
+                <footer class="article-footer">
+                    Adapted from Michał Zadarnowski’s
+                    <a
+                        href="https://medium.com/the-tech-collective/editor-fluency-a-k-a-master-your-tools-ee5fbd74d3d7"
+                        >original Medium article</a
+                    >, published October 2, 2023.
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>

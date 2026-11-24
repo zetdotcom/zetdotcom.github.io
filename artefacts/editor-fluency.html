@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Practice a few everyday Vim moves | Michał Zadarnowski</title>
+        <meta
+            name="description"
+            content="Try a command and see where the cursor or selection goes."
+        />
+        <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="../assets/site.css" />
+        <link rel="stylesheet" href="../assets/field-notes.css" />
+        <script defer src="../assets/vim-practice.js"></script>
+    </head>
+    <body>
+        <main class="page article-page">
+            <article class="reading-article">
+                <header>
+                    <nav class="article-nav" aria-label="Topic navigation">
+                        <a href="./#editor-fluency">Knowledge base</a>
+                        <a href="editor-fluency-article.html">Read the article</a>
+                    </nav>
+                    <h1>Practice a few everyday Vim moves</h1>
+                </header>
+                <div class="article-body field-note">
+                    <p>
+                        Try a few Vim movements on a single line of JavaScript. Choose a task, look
+                        at the marked cursor, and predict where a command will take you. Use the
+                        command buttons with a pointer or with Tab and Enter.
+                    </p>
+                    <section class="workbench" id="vim-lab" hidden>
+                        <label
+                            >Practice task
+                            <select id="drill">
+                                <option value="word">Jump to the second argument</option>
+                                <option value="end">Reach the end of the first argument</option>
+                                <option value="pair">Jump to the matching parenthesis</option>
+                                <option value="inside">Select both arguments together</option>
+                            </select>
+                        </label>
+                        <p class="prompt" id="instruction"></p>
+                        <pre
+                            class="practice-line"
+                            aria-label="Practice buffer"
+                        ><code id="buffer"></code></pre>
+                        <div class="actions command-keys" aria-label="Vim commands" role="group">
+                            <button type="button">w</button>
+                            <button type="button">b</button>
+                            <button type="button">e</button>
+                            <button type="button">%</button>
+                            <button type="button">vi(</button>
+                            <button type="button">Esc</button>
+                        </div>
+                        <p role="status" id="command-result"></p>
+                        <button type="button" id="reset-drill">Reset task</button>
+                    </section>
+                    <noscript
+                        ><p>
+                            Enable JavaScript for the practice buffer. You can also try these
+                            commands in your own Vim-enabled editor using the line
+                            <code>send(previousValue, nextValue)</code>.
+                        </p></noscript
+                    >
+                    <details class="exercise">
+                        <summary>Command reference</summary>
+                        <p>
+                            <code>w</code> moves to the next word start, <code>b</code> to a
+                            previous word start, and <code>e</code> to a word end. Punctuation can
+                            be a stop of its own.
+                        </p>
+                        <p>
+                            <code>%</code> moves between the parentheses. In Normal mode,
+                            <code>vi(</code> starts a visual selection inside the pair, leaving the
+                            delimiters outside. <code>Esc</code> returns to Normal mode.
+                        </p>
+                    </details>
+                    <h2>Take it back to your editor</h2>
+                    <p>
+                        Find a call with two arguments. Try <code>vi(</code> and check exactly what
+                        was selected. Press Escape, then try <code>ci(</code> in your editor to
+                        replace the arguments. Finish by navigating to the definition of the
+                        function and returning to the call site.
+                    </p>
+                </div>
+                <footer class="article-footer">
+                    A companion to Michał Zadarnowski’s
+                    <a
+                        href="https://medium.com/the-tech-collective/editor-fluency-a-k-a-master-your-tools-ee5fbd74d3d7"
+                        >original Medium article</a
+                    >, published October 2, 2023.
+                </footer>
+            </article>
+        </main>
+    </body>
+</html>

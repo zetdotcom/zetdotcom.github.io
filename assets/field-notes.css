@@ -1,0 +1,172 @@
+.field-note h2 {
+    margin-top: 2em;
+    font-size: clamp(1.65rem, 4vw, 2.2rem);
+}
+
+.field-note pre {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 1rem 1.25rem;
+    background: var(--canopy);
+    color: #efefef;
+    font: .95rem/1.65 ui-monospace, "SFMono-Regular", Consolas, monospace;
+    tab-size: 4;
+}
+
+.field-note pre code {
+    font: inherit;
+    background: transparent;
+}
+
+.field-note kbd {
+    font-size: .82em;
+}
+
+.workbench, .exercise {
+    padding-block: 1.4rem;
+    border-top: 1px solid var(--line);
+}
+
+.field-note .exercise h2, .field-note .tool-result h2 {
+    margin: 0 0 .7rem;
+}
+
+.exercise p, .workbench p {
+    margin-block: .8rem;
+}
+
+.field-note summary, .field-note legend, .field-note label, .field-note button,
+.field-note input, .field-note select, .amounts dt, #trace small {
+    font: 1rem/1.5 var(--sans);
+}
+
+.field-note summary {
+    width: fit-content;
+    padding-block: .4rem;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+    cursor: pointer;
+}
+
+.workbench fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.workbench legend {
+    padding: 0;
+    margin-block-end: .8rem;
+    font-weight: 650;
+}
+
+.input-grid, .amounts {
+    display: grid;
+    gap: 1rem 1.5rem;
+}
+
+.input-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+.workbench label {
+    display: grid;
+    align-content: end;
+    gap: .35rem;
+}
+
+.workbench input, .workbench select, .workbench button {
+    min-width: 0;
+    padding: .55rem .7rem;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--muted);
+    border-radius: .2rem;
+}
+
+.workbench select {
+    width: 100%;
+}
+
+.workbench .check-label {
+    display: flex;
+    gap: .6rem;
+    align-items: baseline;
+    margin-top: .9rem;
+}
+
+.workbench input[type="checkbox"] {
+    accent-color: var(--ink);
+}
+
+.workbench .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-block: 1rem;
+}
+
+.workbench button {
+    cursor: pointer;
+}
+
+.workbench button:enabled:hover {
+    background: var(--mist);
+}
+
+.workbench :focus-visible, .field-note summary:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.workbench button:disabled {
+    opacity: .55;
+    cursor: default;
+}
+
+.tool-result {
+    margin-block: 1rem;
+    padding: 1.2rem;
+    border-left: 3px solid var(--ink);
+    background: var(--mist);
+}
+
+.amounts {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    margin-block: 1rem;
+}
+
+.amounts dd {
+    font-size: 1.55rem;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+}
+
+#trace {
+    padding-left: 1.5rem;
+}
+
+#trace li {
+    margin: .65rem 0;
+}
+
+#trace small {
+    display: block;
+    color: var(--muted);
+}
+
+.field-note .practice-line {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.practice-line mark {
+    color: var(--ink);
+    background: #f2d69c;
+}
+
+.command-keys button {
+    min-width: 2.8rem;
+    font-family: ui-monospace, monospace;
+}
