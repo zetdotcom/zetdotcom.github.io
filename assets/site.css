@@ -124,6 +124,8 @@ nav a + a { margin-left: 1.1rem; }
 .lede, .topic-description { max-width: 50ch; }
 .topics, .formats { list-style: none; padding: 0; }
 .topics { margin-top: 2.5rem; padding-block: 2rem; border-top: 1px solid var(--line); }
+.topics > li + li { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--line); }
+.publication-date { display: block; margin-top: .5rem; font: .875rem/1.5 var(--sans); color: var(--muted); }
 .topic-title { max-width: 23ch; font-size: clamp(2rem, 4vw, 3.3rem); margin-bottom: .25em; }
 .formats { margin-top: 1.5rem; }
 .formats li { border-top: 1px solid var(--line); }
